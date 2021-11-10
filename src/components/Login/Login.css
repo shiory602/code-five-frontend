@@ -1,5 +1,22 @@
-.right {
+.login-main {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+
+.leftBox {
   width: 50vw;
-  background-color: #30329C;
-  /* background-color: #EBEBEB; */
+}
+
+.rightBox {
+  width: 50vw;
+  background-color: #EBEBEB;
+}
+.triangle {
+  height: 0;
+  width: 0;
+  border-top: 395px solid transparent;
+  border-right: 395px solid #30329C;
+  border-bottom: 395px solid #30329C;
+  border-left: 395px solid transparent;
 }

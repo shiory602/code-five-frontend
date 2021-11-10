@@ -1,15 +1,18 @@
 import React from "react";
+import "./Login.css";
 
 const Login = () => {
   return (
     <>
     <div className="login-main">
-      <div className="left">
+      <div className="leftBox">
         <div className="logo-image">
-          <img src="" alt="logo" />
+          <img src="/image/CODE5-purple.png" alt="CODE5-purple" />
         </div>
       </div>
-      <div className="right"></div>
+      <div className="rightBox">
+        <div className="triangle"></div>
+      </div>
     </div>
     </>
   )
