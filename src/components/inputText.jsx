@@ -1,6 +1,6 @@
 import React from 'react'
 import TextField from '@mui/material/TextField';
-import "../css-config/material-ui.css";
+import "../css-config/material-ui.scss";
 
 const InputText = ({ placeholder, type, onChange, value }) => {
 	return (
@@ -10,7 +10,7 @@ const InputText = ({ placeholder, type, onChange, value }) => {
 				placeholder={placeholder}
 				variant="outlined"
 				margin="normal"
-				className="button"
+				className="input"
 				size="small"
 				type={type}
 				onChange={onChange}
