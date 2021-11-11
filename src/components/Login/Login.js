@@ -14,22 +14,22 @@ const Login = () => {
       <div className="leftBox">
         <div className="logo-image">
           <img src="/image/CODE5-purple.png" alt="CODE5-purple" />
-          <form>
-            <InputText
-              placeholder="Your Username"
-              type="text"
-              onChange={(e) => setUserName(e.target.value)}
-              value={userName}
-            />
-            <InputText
-              placeholder="Password"
-              type="password"
-              onChange={(e) => setPassword(e.target.value)}
-              value={password}
-            />
-          </form>
-          <Button variant="contained">Login</Button>
         </div>
+        <form>
+          <InputText
+            placeholder="Your Username"
+            type="text"
+            onChange={(e) => setUserName(e.target.value)}
+            value={userName}
+          />
+          <InputText
+            placeholder="Password"
+            type="password"
+            onChange={(e) => setPassword(e.target.value)}
+            value={password}
+          />
+          <Button variant="contained">Login</Button>
+        </form>
       </div>
       <div className="rightBox">
         <div className="triangle"></div>
