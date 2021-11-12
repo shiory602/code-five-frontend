@@ -19,7 +19,7 @@ const Login = () => {
           <form>
             <InputText
               label="USERNAME"
-              placeholder="Your Username"
+              placeholder="Username"
               type="text"
               onChange={(e) => setUserName(e.target.value)}
               value={userName}
