@@ -1,10 +1,14 @@
 import React from 'react'
 import TextField from '@mui/material/TextField';
+import FormLabel from '@mui/material/FormLabel';
 import "../scss-config/material-ui.scss";
 
-const InputText = ({ placeholder, type, onChange, value }) => {
+const InputText = ({ label, placeholder, type, onChange, value }) => {
 	return (
 		<React.Fragment>
+			<FormLabel component="legend" required>
+				{label}
+			</FormLabel>
 			<TextField
 				required
 				placeholder={placeholder}

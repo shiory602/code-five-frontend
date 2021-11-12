@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Login.scss";
-import Button from '@mui/material/Button';
+import "../../scss-config/material-ui.scss"
 import InputText from "../inputText";
 
 const Login = () => {
@@ -12,24 +12,35 @@ const Login = () => {
     <>
     <div className="login-main">
       <div className="leftBox">
-        <div className="logo-image">
-          <img src="/image/CODE5-purple.png" alt="CODE5-purple" />
+        <div className="leftBox-container">
+          <div className="logo-image">
+            <img src="/image/CODE5-purple.png" alt="CODE5-purple" />
+          </div>
+          <form>
+            <InputText
+              label="USERNAME"
+              placeholder="Your Username"
+              type="text"
+              onChange={(e) => setUserName(e.target.value)}
+              value={userName}
+            />
+            <InputText
+              label="PASSWORD"
+              placeholder="Password"
+              type="password"
+              onChange={(e) => setPassword(e.target.value)}
+              value={password}
+            />
+            <div className="buttonContainer">
+              <button className="button" variant="contained">Login</button>
+            </div>
+          </form>
+          <div className="sub-message">
+            <p>Don't have an account yet? Click here to 
+              <button className="bold button-hover"> Register</button>
+            </p>
+          </div>
         </div>
-        <form>
-          <InputText
-            placeholder="Your Username"
-            type="text"
-            onChange={(e) => setUserName(e.target.value)}
-            value={userName}
-          />
-          <InputText
-            placeholder="Password"
-            type="password"
-            onChange={(e) => setPassword(e.target.value)}
-            value={password}
-          />
-          <Button variant="contained">Login</Button>
-        </form>
       </div>
       <div className="rightBox">
         <div className="triangle"></div>
