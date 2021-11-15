@@ -2,6 +2,7 @@ import React from "react";
 import { Router, Route, Switch } from "react-router-dom";
 import Dashboard from "../components/Dashboard/Dashboard.js";
 import Login from "../components/Login/Login";
+import Register from "../components/Register/Register";
 // import Wrapper from "../components/Wrapper/Wrapper";
 import { createBrowserHistory } from "history";
 
@@ -13,6 +14,7 @@ const AppRouter = () => (
       <Switch>
         <Route path="/" component={Dashboard} exact={true} />
         <Route path="/login" component={Login} />
+        <Route path="/register" component={Register} />
       </Switch>
     {/* </Wrapper> */}
   </Router>
