@@ -1,0 +1,53 @@
+@import "../../scss-config/mixin.scss";
+
+.login-main {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  
+  .leftBox {
+    width: 50%;
+    margin: 100px 68px;
+		@include mobile {
+			width: 100%;
+      margin: 10px auto;
+		}
+    
+    .leftBox-container {
+      font-size: 24px;
+      @include mobile {
+        font-size: 27px;
+        margin: 35px;
+      }
+      
+      form {
+        width: 80%;
+        margin-top: 58px;
+      }
+      
+      .sub-message {
+        margin-top: 20px;
+          
+        .bold {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+  
+  .rightBox {
+    width: 50%;
+    background-color: #EBEBEB;
+    .triangle {
+      height: 0;
+      width: 0;
+      border-top: 395px solid transparent;
+      border-right: 395px solid #30329C;
+      border-bottom: 395px solid #30329C;
+      border-left: 395px solid transparent;
+    }
+		@include mobile {
+			display: none;
+		}
+  }
+}

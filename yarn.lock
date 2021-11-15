@@ -5459,6 +5459,8 @@
   "resolved" "https://registry.npmjs.org/find-root/-/find-root-1.1.0.tgz"
   "version" "1.1.0"
 
+<<<<<<< HEAD
+=======
 "find-up@^1.0.0":
   "integrity" "sha1-ay6YIrGizgpgq2TWEOzK1TyyTQ8="
   "resolved" "https://registry.npmjs.org/find-up/-/find-up-1.1.2.tgz"
@@ -5467,6 +5469,7 @@
     "path-exists" "^2.0.0"
     "pinkie-promise" "^2.0.0"
 
+>>>>>>> 6ccb9531208e7d74ace73ced4c0482e18c3d651e
 "find-up@^2.0.0":
   "integrity" "sha1-RdG35QbHF93UgndaK3eSCjwMV6c="
   "resolved" "https://registry.npmjs.org/find-up/-/find-up-2.1.0.tgz"

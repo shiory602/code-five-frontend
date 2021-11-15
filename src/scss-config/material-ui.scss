@@ -1,0 +1,45 @@
+
+.button-hover {
+  color: rgb(36, 36, 36);
+  border: none;
+  outline: none;
+  background: transparent;
+  // text-decoration: underline;
+  font-size: 27px;
+  font-weight: bold;
+  margin-top: 20px;
+  cursor: pointer;
+  font-family: 'Oswald', sans-serif;
+  
+  &:hover {
+    color: #30329C;
+    // text-decoration: underline;
+  }
+}
+
+
+.input {
+  width: 100%;
+  height: 55px;
+}
+.radio {
+  margin: 8px 0 8px;
+}
+.buttonContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.button {
+  width: 100%;
+  height: 54px;
+  border-radius: 5px;
+  background-color: #30329C;
+  color: #fff;
+  font-size: 27px;
+  cursor: pointer;
+	font-family: 'Oswald', sans-serif;
+}

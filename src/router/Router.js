@@ -1,7 +1,7 @@
 import React from "react";
 import { Router, Route, Switch } from "react-router-dom";
 import Dashboard from "../components/Dashboard/Dashboard.js";
-// import Login from "../components/Login/Login";
+import Login from "../components/Login/Login";
 // import Wrapper from "../components/Wrapper/Wrapper";
 import { createBrowserHistory } from "history";
 
@@ -12,7 +12,7 @@ const AppRouter = () => (
     {/* <Wrapper> */}
       <Switch>
         <Route path="/" component={Dashboard} exact={true} />
-        {/* <Route path="/login" component={Login} /> */}
+        <Route path="/login" component={Login} />
       </Switch>
     {/* </Wrapper> */}
   </Router>
