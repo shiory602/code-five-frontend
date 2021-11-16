@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Register.scss";
 import "../../scss-config/material-ui.scss"
 import InputText from "../inputText";
+import { v4 as uuid } from 'uuid';
 
 const Register = () => {
 
@@ -9,6 +10,29 @@ const Register = () => {
   let [fullName, setFullName] = useState("");
   let [email, setEmail] = useState("");
   let [password, setPassword] = useState("");
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    const postingInfo = {
+      profile: {
+        userName,
+        fullName,
+        email,
+        password, 
+      },
+      uid: uuid()
+    };
+    console.log(postingInfo)
+    // auth.createUserWithEmailAndPassword(email, password)
+    //   .then((userCredential) => {
+    //     // setUser(postingInfo);
+    //     insertUser(postingInfo, userCredential.user.uid);
+    //     setStep(step + 1);
+    //   })
+      // .catch(e => {
+      //   console.error(`Error happened: ${e}`);
+      // })
+  };
 
   return (
     <>
@@ -18,7 +42,7 @@ const Register = () => {
           <div className="logo-image">
             <img src="/image/CODE5-purple.png" alt="CODE5-purple" />
           </div>
-          <form>
+          <form onSubmit={(e) => onSubmit(e)}>
             <InputText
               label="USERNAME"
               placeholder="Username"
@@ -48,7 +72,7 @@ const Register = () => {
               value={password}
             />
             <div className="buttonContainer">
-              <button className="button" variant="contained">Register</button>
+              <button className="button" variant="contained" type="submit">Register</button>
             </div>
           </form>
           <div className="sub-message">

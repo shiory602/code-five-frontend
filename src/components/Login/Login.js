@@ -2,11 +2,33 @@ import React, { useState } from "react";
 import "./Login.scss";
 import "../../scss-config/material-ui.scss"
 import InputText from "../inputText";
+import { v4 as uuid } from 'uuid';
 
 const Login = () => {
 
   let [userName, setUserName] = useState("");
   let [password, setPassword] = useState("");
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    const postingInfo = {
+      profile: {
+        userName,
+        password, 
+      },
+      uid: uuid()
+    };
+    console.log(postingInfo)
+    // auth.createUserWithEmailAndPassword(email, password)
+    //   .then((userCredential) => {
+    //     // setUser(postingInfo);
+    //     insertUser(postingInfo, userCredential.user.uid);
+    //     setStep(step + 1);
+    //   })
+      // .catch(e => {
+      //   console.error(`Error happened: ${e}`);
+      // })
+  };
 
   return (
     <>
@@ -16,7 +38,7 @@ const Login = () => {
           <div className="logo-image">
             <img src="/image/CODE5-purple.png" alt="CODE5-purple" />
           </div>
-          <form>
+          <form onSubmit={(e) => onSubmit(e)}>
             <InputText
               label="USERNAME"
               placeholder="Username"
