@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Register.scss";
 import "../../scss-config/material-ui.scss"
 import InputText from "../inputText";
@@ -77,7 +78,7 @@ const Register = () => {
           </form>
           <div className="sub-message">
             <p>I already have an account! Click here to
-              <button className="bold button-hover"> Login</button>
+              <Link className="bold button-hover" to="login"> Login</Link>
             </p>
           </div>
         </div>

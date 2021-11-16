@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Login.scss";
 import "../../scss-config/material-ui.scss"
 import InputText from "../inputText";
@@ -59,7 +60,7 @@ const Login = () => {
           </form>
           <div className="sub-message">
             <p>Don't have an account yet? Click here to 
-              <button className="bold button-hover"> Register</button>
+            <Link className="bold button-hover" to="register"> Register</Link>
             </p>
           </div>
         </div>
