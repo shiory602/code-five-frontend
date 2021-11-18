@@ -8,7 +8,8 @@ import { v4 as uuid } from 'uuid';
 const Register = () => {
 
   let [userName, setUserName] = useState("");
-  let [fullName, setFullName] = useState("");
+  let [firstName, setFirstName] = useState("");
+  let [lastName, setLastName] = useState("");
   let [email, setEmail] = useState("");
   let [password, setPassword] = useState("");
 
@@ -17,7 +18,8 @@ const Register = () => {
     const postingInfo = {
       profile: {
         userName,
-        fullName,
+        firstName,
+        lastName,
         email,
         password, 
       },
@@ -52,11 +54,25 @@ const Register = () => {
               value={userName}
             />
             <InputText
-              label="FULL NAME"
-              placeholder="Full name"
+              label="PASSWORD"
+              placeholder="Password"
+              type="password"
+              onChange={(e) => setPassword(e.target.value)}
+              value={password}
+            />
+            <InputText
+              label="FIRST NAME"
+              placeholder="First name"
               type="text"
-              onChange={(e) => setFullName(e.target.value)}
-              value={fullName}
+              onChange={(e) => setFirstName(e.target.value)}
+              value={firstName}
+            />
+            <InputText
+              label="LAST NAME"
+              placeholder="Last name"
+              type="text"
+              onChange={(e) => setLastName(e.target.value)}
+              value={lastName}
             />
             <InputText
               label="EMAIL"
@@ -64,13 +80,6 @@ const Register = () => {
               type="email"
               onChange={(e) => setEmail(e.target.value)}
               value={email}
-            />
-            <InputText
-              label="PASSWORD"
-              placeholder="Password"
-              type="password"
-              onChange={(e) => setPassword(e.target.value)}
-              value={password}
             />
             <div className="buttonContainer">
               <button className="button" variant="contained" type="submit">Register</button>
