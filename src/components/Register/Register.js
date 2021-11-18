@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "./Login.scss";
+import "./Register.scss";
 import "../../scss-config/material-ui.scss"
 import InputText from "../inputText";
 import { v4 as uuid } from 'uuid';
 
-const Login = () => {
+const Register = () => {
 
   let [userName, setUserName] = useState("");
+  let [fullName, setFullName] = useState("");
+  let [email, setEmail] = useState("");
   let [password, setPassword] = useState("");
 
   const onSubmit = (e) => {
@@ -15,6 +17,8 @@ const Login = () => {
     const postingInfo = {
       profile: {
         userName,
+        fullName,
+        email,
         password, 
       },
       uid: uuid()
@@ -33,7 +37,7 @@ const Login = () => {
 
   return (
     <>
-    <div className="login-main">
+    <div className="register-main">
       <div className="leftBox">
         <div className="leftBox-container">
           <div className="logo-image">
@@ -48,6 +52,20 @@ const Login = () => {
               value={userName}
             />
             <InputText
+              label="FULL NAME"
+              placeholder="Full name"
+              type="text"
+              onChange={(e) => setFullName(e.target.value)}
+              value={fullName}
+            />
+            <InputText
+              label="EMAIL"
+              placeholder="Email"
+              type="email"
+              onChange={(e) => setEmail(e.target.value)}
+              value={email}
+            />
+            <InputText
               label="PASSWORD"
               placeholder="Password"
               type="password"
@@ -55,12 +73,12 @@ const Login = () => {
               value={password}
             />
             <div className="buttonContainer">
-              <button className="button" variant="contained">Login</button>
+              <button className="button" variant="contained" type="submit">Register</button>
             </div>
           </form>
           <div className="sub-message">
-            <p>Don't have an account yet? Click here to 
-            <Link className="bold button-hover" to="register"> Register</Link>
+            <p>I already have an account! Click here to
+              <Link className="bold button-hover" to="login"> Login</Link>
             </p>
           </div>
         </div>
@@ -73,4 +91,4 @@ const Login = () => {
   )
 }
 
-export default Login;
+export default Register;
