@@ -4,7 +4,7 @@ body {
 
 .dashboard {
     display: grid;
-    height: 100vh;
+    height: 100%;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 2fr;
     grid-gap: 1.5rem;
@@ -71,13 +71,12 @@ body {
 
 .history h3 {
     font-size: 40px;
-    margin-left: -20px;
-    margin-top: -20px;
+    text-align: center;
 }
 
 .history ul {
     background: rgba(0,0,0,0.1);
-    padding: 10px;
+    padding: 20px;
     box-shadow: inset 0 0 15px rgba(0,0,0,0.2);
     border-radius: 5px;
     margin: 20px;
@@ -87,7 +86,7 @@ body {
 .history ul li {
     display: flex;
     background: rgba(255,255,255,0.1);
-    padding: 10px 20px;
+    padding: 5px 20px;
     margin: 5px 0;
     transition: .5s;
     border-radius: 5px;
@@ -107,7 +106,7 @@ body {
 }
 
 .history ul li span:nth-child(1) {
-    width: 70px;
+    width: 90px;
 }
 
 .history ul li span:nth-child(2) {
@@ -132,6 +131,11 @@ body {
     border-right: 1px solid rgba(255,255,255,0.2);
     border-bottom: 1px solid rgba(255,255,255,0.2);
     padding: 1rem;
+}
+
+.transaction h3 {
+    font-size: 35px;
+    margin-bottom: 20px;
 }
 
 @media screen and (max-width: 960px) {
@@ -184,12 +188,16 @@ body {
     }
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 500px) {
     body {
         background: linear-gradient(180deg, #797AAF 0%, #30329C 50%, #797AAF 100%);
     }
 
     .dashboard {
-        padding: 10px;
+        padding: 3px;
+    }
+
+    .box3 {
+        margin-bottom: 10px;
     }
 }

@@ -1,6 +1,8 @@
 import React from 'react';
 import Navbar from '../Navbar/Navbar';
 import "./Dashboard.css";
+import "../../scss-config/material-ui.scss"
+import InputText from "../inputText";
 
 const Dashboard = () => {
   return (
@@ -11,7 +13,7 @@ const Dashboard = () => {
 
           <div className="box1">
             <div className="total">
-              <h3>Expenses:</h3>
+              <h3>Expenses</h3>
               <h1>$980.00</h1>
             </div>
             <div className="status">
@@ -21,8 +23,9 @@ const Dashboard = () => {
           </div>
 
           <div className="box2">
-          <div className="history">
-              <h3>History:</h3>
+            <div className="history">
+              <h3>History</h3>
+
               <ul>
                 <li>
                   <span className="name">Lunch</span>
@@ -45,9 +48,37 @@ const Dashboard = () => {
                   <span className="value">$ 100</span>
                 </li>
               </ul>
+
+              <div className="buttonContainer">
+                <button className="button" variant="contained">See more...</button>
+              </div>
+
             </div>
           </div>
-          <div className="box3">New Transaction</div>          
+          <div className="box3">
+            <form className="transaction">
+              <h3>New Transaction</h3>
+                <InputText
+                label="DESCRIPTION"
+                placeholder="Description"
+                type="text"
+                />
+                <InputText
+                label="AMOUNT"
+                placeholder="Amount"
+                type="number"
+                />
+                <InputText
+                label="IMAGE"
+                placeholder="Image"
+                type="image"
+                />
+            
+              <div className="buttonContainer">
+                <button className="button" variant="contained">Add new...</button>
+              </div>
+            </form>
+          </div>          
       </div>
 
     </div>
