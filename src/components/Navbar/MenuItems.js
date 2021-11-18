@@ -8,7 +8,7 @@ export const MenuItems = [
     {
         title: 'Dashboard',
         icon: <DashboardIcon />,
-        url: '#',
+        url: '/',
         cName: 'nav-links'
     },
     {

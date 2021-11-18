@@ -8,8 +8,45 @@ const Dashboard = () => {
       <Navbar />
 
       <div className="dashboard">
-          <div className="box1">Expenses</div>
-          <div className="box2">History</div>
+
+          <div className="box1">
+            <div className="total">
+              <h3>Expenses:</h3>
+              <h1>$980.00</h1>
+            </div>
+            <div className="status">
+              <h4>Status:</h4>
+              <h2>Wainting for Approval</h2>
+            </div>
+          </div>
+
+          <div className="box2">
+          <div className="history">
+              <h3>History:</h3>
+              <ul>
+                <li>
+                  <span className="name">Lunch</span>
+                  <span className="value">$ 60</span>
+                </li>
+                <li>
+                  <span className="name">Taxi</span>
+                  <span className="value">$ 40</span>
+                </li>
+                <li>
+                  <span className="name">Gas</span>
+                  <span className="value">$ 80</span>
+                </li>
+                <li>
+                  <span className="name">Lunch</span>
+                  <span className="value">$ 60</span>
+                </li>
+                <li>
+                  <span className="name">Taxi</span>
+                  <span className="value">$ 100</span>
+                </li>
+              </ul>
+            </div>
+          </div>
           <div className="box3">New Transaction</div>          
       </div>
 
