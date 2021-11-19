@@ -71,7 +71,7 @@ const Dashboard = () => {
                 <h4>Image:</h4>
                 <InputText
                 placeholder="Image"
-                type="image"
+                type="file"
                 />
             
               <div className="buttonContainer">

@@ -80,12 +80,9 @@
         top: 0;
         height: 80px;
         position: fixed;
-        box-shadow: 0 35px 45px rgba(0,0,0,0.1);
         border-bottom: 1px solid rgba(255,255,255,0.5);
-        border-right: 1px solid rgba(255,255,255,0.2);
-        border-bottom: 1px solid rgba(255,255,255,0.2);
         border-bottom-left-radius: 5px;
-        border-bottom-right-radius: 5px;
+        border-top-right-radius: 0;
     }
 
     .navbar-logo {

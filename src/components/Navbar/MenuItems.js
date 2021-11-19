@@ -14,19 +14,19 @@ export const MenuItems = [
     {
         title: 'History',
         icon: <ListAltIcon />,
-        url: '#',
+        url: '/history',
         cName: 'nav-links'
     },
     {
         title: 'Approval',
         icon: <AssignmentTurnedInIcon />,
-        url: '#',
+        url: '/approval',
         cName: 'nav-links'
     },
     {
         title: 'Settings',
         icon: <SettingsIcon />,
-        url: '#',
+        url: '/settings',
         cName: 'nav-links'
     }
 ]
