@@ -12,7 +12,7 @@ const InputText = ({ label, placeholder, type, onChange, value }) => {
 			<TextField
 				required
 				placeholder={placeholder}
-				variant="outlined"
+				variant="filled"
 				margin="normal"
 				className="input"
 				size="small"
