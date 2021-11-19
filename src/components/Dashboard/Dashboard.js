@@ -58,18 +58,18 @@ const Dashboard = () => {
           <div className="box3">
             <form className="transaction">
               <h3>New Transaction</h3>
-                <InputText
-                label="DESCRIPTION"
-                placeholder="Description"
+              <h4>Description:</h4>
+                <InputText        
+                placeholder="Description..."
                 type="text"
                 />
+                <h4>Amount:</h4>
                 <InputText
-                label="AMOUNT"
-                placeholder="Amount"
+                placeholder="Amount..."
                 type="number"
                 />
+                <h4>Image:</h4>
                 <InputText
-                label="IMAGE"
                 placeholder="Image"
                 type="image"
                 />

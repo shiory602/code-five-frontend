@@ -1,5 +1,5 @@
 body {
-    background: linear-gradient(180deg, #797AAF 0%, #30329C 50%, #797AAF 100%);
+    background: linear-gradient(180deg, #B2B3CD 0%, #797AAF 50%, #B2B3CD 100%);
 }
 
 .dashboard {
@@ -116,7 +116,7 @@ body {
 
 .history ul li:hover {
     transform: scale(1.06);
-    background: #797AAF;
+    background: #B2B3CD;
 }
 
 .box3 {
@@ -136,6 +136,10 @@ body {
 .transaction h3 {
     font-size: 35px;
     margin-bottom: 20px;
+}
+
+.transaction h4 {
+    font-size: 20px;
 }
 
 @media screen and (max-width: 960px) {

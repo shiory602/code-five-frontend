@@ -6,7 +6,7 @@ import "../scss-config/material-ui.scss";
 const InputText = ({ label, placeholder, type, onChange, value }) => {
 	return (
 		<React.Fragment>
-			<FormLabel component="legend" required>
+			<FormLabel component="legend">
 				{label}
 			</FormLabel>
 			<TextField
