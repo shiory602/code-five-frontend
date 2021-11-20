@@ -13,8 +13,8 @@ const Approval = () => {
                     <h3>Approval</h3>
 
                     
-                    <div className="buttonContainer">
-                        <button className="button" variant="contained">Dashboard...</button>
+                    <div className="dashboard-button">
+                        <button className="button-2">Dashboard</button>
                     </div>
 
                     </div>

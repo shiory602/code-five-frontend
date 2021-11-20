@@ -49,8 +49,8 @@ const Dashboard = () => {
                 </li>
               </ul>
 
-              <div className="buttonContainer">
-                <button className="button" variant="contained">See more...</button>
+              <div className="dashboard-button">
+                <button className="button-2">See more</button>
               </div>
 
             </div>
@@ -74,8 +74,8 @@ const Dashboard = () => {
                 type="file"
                 />
             
-              <div className="buttonContainer">
-                <button className="button" variant="contained">Add new...</button>
+              <div className="dashboard-button">
+                <button className="button-2">Add New</button>
               </div>
             </form>
           </div>          
