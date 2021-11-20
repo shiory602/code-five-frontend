@@ -1,15 +1,16 @@
 import React from 'react';
 import Navbar from '../Navbar/Navbar';
 import "./History.css";
+import "../../scss-config/material-ui.scss";
 
 const History = () => {
     return (
       <div>
         <Navbar />
-        <div className="container">
-            <div className="box">
+        <div className="history-container">
+            <div className="history-box">
                 <div className="history-page">
-                    <h3>History</h3>
+                    <h3>Expenses History</h3>
 
                     <ul>
                         <li>
