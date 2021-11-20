@@ -11,7 +11,7 @@ const Dashboard = () => {
 
       <div className="dashboard">
 
-          <div className="box1">
+          <div className="box box1">
             <div className="total">
               <h3>Expenses</h3>
               <h1>$980.00</h1>
@@ -22,7 +22,7 @@ const Dashboard = () => {
             </div>
           </div>
 
-          <div className="box2">
+          <div className="box box2">
             <div className="history">
               <h3>History</h3>
 
@@ -55,7 +55,7 @@ const Dashboard = () => {
 
             </div>
           </div>
-          <div className="box3">
+          <div className="box box3">
             <form className="transaction">
               <h3>New Transaction</h3>
               <h4>Description:</h4>
