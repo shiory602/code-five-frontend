@@ -9,7 +9,7 @@ body {
     grid-template-rows: 1fr 2fr;
     grid-gap: 1.5rem;
     margin-left: 300px;
-    padding: 30px;
+    padding: 1rem;
     grid-template-areas: 
     "box1 box1 box1 box1"
     "box2 box2 box3 box3"
