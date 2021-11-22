@@ -121,7 +121,7 @@ body {
 }
 
 .history ul li:hover {
-    transform: scale(1.06);
+    transform: scale(1.03);
     background: #B2B3CD;
 }
 
