@@ -50,7 +50,7 @@ const Dashboard = () => {
               </ul>
 
               <div className="dashboard-button">
-                <button className="button-2">See more</button>
+                <button className="button-2" onclick="location.href='/history'">See more</button>
               </div>
 
             </div>
