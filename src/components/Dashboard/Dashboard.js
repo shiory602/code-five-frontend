@@ -3,6 +3,7 @@ import Navbar from '../Navbar/Navbar';
 import "./Dashboard.css";
 import "../../scss-config/material-ui.scss";
 import InputText from "../inputText";
+import {Link } from "react-router-dom";
 
 const Dashboard = () => {
   return (
@@ -50,7 +51,7 @@ const Dashboard = () => {
               </ul>
 
               <div className="dashboard-button">
-                <button className="button-2" onclick="location.href='/history'">See more</button>
+              <Link to="/history"><button className="button-2">See more</button></Link>
               </div>
 
             </div>

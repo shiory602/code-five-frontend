@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from '../Navbar/Navbar';
 import "../../scss-config/material-ui.scss";
 import "./Settings.css";
+import {Link } from "react-router-dom";
 
 const Settings = () => {
     return (
@@ -14,7 +15,7 @@ const Settings = () => {
 
                     
                     <div className="dashboard-button">
-                        <button className="button-2">Dashboard</button>
+                    <Link to="/"><button className="button-2">Dashboard</button></Link>
                     </div>
 
                     </div>

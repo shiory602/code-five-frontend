@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from '../Navbar/Navbar';
 import "./History.css";
 import "../../scss-config/material-ui.scss";
+import {Link } from "react-router-dom";
 
 const History = () => {
     return (
@@ -72,7 +73,7 @@ const History = () => {
                     </ul>
 
                     <div className="dashboard-button">
-                        <button className="button-2">Dashboard</button>
+                    <Link to="/"><button className="button-2">Dashboard</button></Link>
                     </div>
 
                     </div>
