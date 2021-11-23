@@ -46,58 +46,70 @@ const Settings = () => {
 
             <form onSubmit={(e) => onSubmit(e)}>
               <div className="row">
-                <InputText
-                  className="row-item"
-                  label="USERNAME"
-                  placeholder="Username"
-                  type="text"
-                  onChange={(e) => setUserName(e.target.value)}
-                  value={userName}
-                />
-                <InputText
-                  className="row-item"
-                  label="PASSWORD"
-                  placeholder="Password"
-                  type="password"
-                  onChange={(e) => setPassword(e.target.value)}
-                  value={password}
-                />
+                <div className="row-container">
+                  <InputText
+                    className="row-item"
+                    label="USERNAME"
+                    placeholder="Username"
+                    type="text"
+                    onChange={(e) => setUserName(e.target.value)}
+                    value={userName}
+                  />
+                </div>
+                <div className="row-container">
+                  <InputText
+                    className="row-item"
+                    label="PASSWORD"
+                    placeholder="Password"
+                    type="password"
+                    onChange={(e) => setPassword(e.target.value)}
+                    value={password}
+                  />
+                </div>
               </div>
               <div className="row">
-                <InputText
-                  className="row-item"
-                  label="FIRST NAME"
-                  placeholder="First name"
-                  type="text"
-                  onChange={(e) => setFirstName(e.target.value)}
-                  value={firstName}
-                />
-                <InputText
-                  className="row-item"
-                  label="LAST NAME"
-                  placeholder="Last name"
-                  type="text"
-                  onChange={(e) => setLastName(e.target.value)}
-                  value={lastName}
-                />
+                <div className="row-container">
+                  <InputText
+                    className="row-item"
+                    label="FIRST NAME"
+                    placeholder="First name"
+                    type="text"
+                    onChange={(e) => setFirstName(e.target.value)}
+                    value={firstName}
+                  />
+                </div>
+                <div className="row-container">
+                  <InputText
+                    className="row-item"
+                    label="LAST NAME"
+                    placeholder="Last name"
+                    type="text"
+                    onChange={(e) => setLastName(e.target.value)}
+                    value={lastName}
+                  />
+                </div>
               </div>
               <div className="row">
-                <InputText
-                  className="row-item"
-                  label="EMAIL"
-                  placeholder="Email"
-                  type="email"
-                  onChange={(e) => setEmail(e.target.value)}
-                  value={email}
-                />
+                <div className="row-container">
+                  <InputText
+                    className="row-item"
+                    label="EMAIL"
+                    placeholder="Email"
+                    type="email"
+                    onChange={(e) => setEmail(e.target.value)}
+                    value={email}
+                  />
+                </div>
               </div>
-              <div className="buttonContainer">
-                <button className="button" variant="contained">SAVE</button>
+              <div className="buttons">
+                <div className="button-container">
+                  <button className="button" variant="contained">SAVE</button>
+                </div>
+                <div className="sub-message">
+                  <Link className="bold button-hover" to="login">CANCEL</Link>
+                </div>
               </div>
             </form>
-            <div className="sub-message">
-              <Link className="bold button-hover" to="login">CANCEL</Link>
-            </div>
           </div>
         </div>
       </div>
