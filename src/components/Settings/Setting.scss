@@ -1,3 +1,5 @@
+@import "../../scss-config/mixin.scss";
+
 body {
   background: linear-gradient(180deg, #B2B3CD 0%, #797AAF 50%, #B2B3CD 100%);
 }
@@ -13,9 +15,15 @@ body {
     border: 1px solid rgba(255,255,255,0.5);
     border-right: 1px solid rgba(255,255,255,0.2);
     border-bottom: 1px solid rgba(255,255,255,0.2);
-    padding: 1rem;
-    margin: 0rem 1rem 2rem 20rem;
-    height: 88vh;
+    @include mobile {
+      margin-top: 80px;
+      margin-bottom: 80px;
+    }
+    @include pc {
+      padding: 1rem;
+      margin: 0rem 1rem 2rem 20rem;
+      height: 88vh;
+    }
 
     .setting_container {
       h2 {
@@ -25,29 +33,16 @@ body {
       }
 
       .setting_image {
-        width: 90px;
-        height: 90px;
-        margin: 10px;
-
-        &_icon {
-          width: 100%;
-          height: 100%;
-          // background: #C4C4C4;
-        }
-      }
-      
-      .setting_image_plus {
         display: flex;
-        position: relative;
-        top: -96px;
-        left: 72px;
-        width: 30px;
-        height: 30px;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
 
         &_icon {
-          width: 100%;
-          height: 100%;
-          // background: #30329C;
+          width: 90px;
+          height: 90px;
+          margin: 20px;
+          // background: #C4C4C4;
         }
       }
       
@@ -55,10 +50,16 @@ body {
         display: flex;
         flex-direction: row;
         justify-content: start;
+        @include mobile {
+          flex-direction: column;
+        }
 
         .row-container {
           margin: 10px 30px;
           width: 45%;
+          @include mobile {
+            width: 15rem;
+          }
         }
         
         .row-item {

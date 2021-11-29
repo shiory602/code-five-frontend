@@ -13,6 +13,13 @@ const Settings = () => {
   let [lastName, setLastName] = useState("");
   let [email, setEmail] = useState("");
   let [password, setPassword] = useState("");
+  let [fileUrl, setFileUrl] = useState(null);
+
+  function processImage(event){
+    const imageFile = event.target.files[0];
+    const imageUrl = URL.createObjectURL(imageFile);
+    setFileUrl(imageUrl)
+  }
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -22,7 +29,8 @@ const Settings = () => {
         firstName,
         lastName,
         email,
-        password,  
+        password, 
+        fileUrl 
       },
       // uid: 
     };
@@ -38,10 +46,8 @@ const Settings = () => {
           <div className="setting_container">
             <h2>Account Setting</h2>
             <div className="setting_image">
-              <AccountCircleIcon className="setting_image_icon" />
-            </div>
-            <div className="setting_image_plus">
-              <AddCircleIcon className="setting_image_plus_icon" />
+              <img src={fileUrl} id="preview" className="setting_image_icon" />
+              <input type="file" onChange={processImage} accept="image/*" />
             </div>
 
             <form onSubmit={(e) => onSubmit(e)}>
