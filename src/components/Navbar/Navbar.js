@@ -32,9 +32,9 @@ class Navbar extends Component {
                                 </li>
                             )
                         })}
-                        
+                        <h2 className="navbar-avatar"><img src={avatar} alt="Avatar" className="avatar"/> <h3>User</h3></h2>
                     </ul>
-                    <h2 className="navbar-avatar"><img src={avatar} alt="Avatar" className="avatar"/> <h3>User</h3></h2>
+                    
             </nav>
         )
     }
