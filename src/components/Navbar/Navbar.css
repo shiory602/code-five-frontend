@@ -1,6 +1,6 @@
 .NavbarItems {
     background: #7400B8;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     position: fixed;
     left: 0;
     height: 100%;
@@ -71,6 +71,28 @@
 
 .menu-icon {
     display: none;
+}
+
+.navbar-avatar {
+    margin-top: 40rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+}
+
+.navbar-avatar h3 {
+    margin-left: 1rem;
+    color: #FBFEFB;
+    font-size: 1.8rem;
+}
+
+.avatar {
+    vertical-align: middle;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    border: 2px solid #3A005C;
 }
 
 @media screen and (max-width: 960px) {
@@ -148,4 +170,9 @@
         color: #FBFEFB;
         font-size: 2rem;
     }
+
+    .navbar-avatar {
+        margin-top: 4rem;
+    }
 }
+
