@@ -1,0 +1,82 @@
+@import "../../scss-config/mixin.scss";
+
+body {
+  background: linear-gradient(180deg, #B2B3CD 0%, #797AAF 50%, #B2B3CD 100%);
+}
+
+.setting_main {
+  height: 100vh;
+  padding: 2rem;
+  
+  .box {
+    background: rgba(255,255,255,0.1);
+    border-radius: 10px;
+    box-shadow: 0 35px 45px rgba(0,0,0,0.1);
+    border: 1px solid rgba(255,255,255,0.5);
+    border-right: 1px solid rgba(255,255,255,0.2);
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    @include mobile {
+      margin-top: 80px;
+      margin-bottom: 80px;
+    }
+    @include pc {
+      padding: 1rem;
+      margin: 0rem 1rem 2rem 20rem;
+      height: 88vh;
+    }
+
+    .setting_container {
+      h2 {
+        margin: 1rem;
+        border-bottom: 1px solid #000;
+        width: 160px;
+      }
+
+      .setting_image {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+
+        &_icon {
+          width: 90px;
+          height: 90px;
+          margin: 20px;
+          // background: #C4C4C4;
+        }
+      }
+      
+      .row {
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        @include mobile {
+          flex-direction: column;
+        }
+
+        .row-container {
+          margin: 10px 30px;
+          width: 45%;
+          @include mobile {
+            width: 15rem;
+          }
+        }
+        
+        .row-item {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+
+      .buttons {
+        display: flex;
+        margin: 10px auto;
+        justify-content: space-evenly;
+
+        .button-container {
+          width: 30%;
+        }
+      }
+    }
+  }
+}
