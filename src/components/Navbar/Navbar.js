@@ -33,6 +33,7 @@ class Navbar extends Component {
                             )
                         })}
                         <h2 className="navbar-avatar"><img src={avatar} alt="Avatar" className="avatar"/> <h3>User</h3></h2>
+                        <h2 className="btn-signout">Sign out</h2>
                     </ul>
                     
             </nav>
