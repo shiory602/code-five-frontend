@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import Navbar from '../Navbar/Navbar';
 import InputText from "../inputText";
 import "./Setting.scss";
-import AccountCircleIcon from '@material-ui/icons/AccountCircle';
-import AddCircleIcon from '@material-ui/icons/AddCircle';
 
 const Settings = () => {
 
@@ -112,7 +110,7 @@ const Settings = () => {
                   <button className="button" variant="contained">SAVE</button>
                 </div>
                 <div className="sub-message">
-                  <Link className="bold button-hover" to="login">CANCEL</Link>
+                  <Link className="bold button-hover" to="/">CANCEL</Link>
                 </div>
               </div>
             </form>
@@ -122,5 +120,4 @@ const Settings = () => {
     </div>
   )
 }  
-
 export default Settings;

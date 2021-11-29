@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import logo from "../logowhite.png";
+import avatar from "../avatar.png";
 import { MenuItems } from "./MenuItems";
 import './Navbar.css';
 
@@ -31,6 +32,8 @@ class Navbar extends Component {
                                 </li>
                             )
                         })}
+                        <h2 className="navbar-avatar"><img src={avatar} alt="Avatar" className="avatar"/> <h3>User</h3></h2>
+                        <h2 className="btn-signout">Sign out</h2>
                     </ul>
                     
             </nav>
