@@ -3,7 +3,7 @@
 
 .register-main {
   width: 100vw;
-  height: 100vh;
+  // height: 100vh;
   display: flex;
   background: $color_light;
   
@@ -38,6 +38,10 @@
   }
   
   .rightBox {
+    position: fixed;
+    height: 100%;
+    right: 0;
+    z-index: 10000;
     width: 50%;
     background-color: #fff;
     display: flex;
