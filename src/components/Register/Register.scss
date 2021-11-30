@@ -48,11 +48,12 @@
     align-items: center;
 
     &-img {
-      width: 100%;
-      margin: 20px;
+      width: 600px;
+      margin: 20px auto;
 
       img {
         width: 100%;
+        max-width: 965px;
       }
     }
 
