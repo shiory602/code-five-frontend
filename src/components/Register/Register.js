@@ -93,7 +93,10 @@ const Register = () => {
         </div>
       </div>
       <div className="rightBox">
-        <div className="triangle"></div>
+        <div className="rightBox-img">
+          <img src="/image/register.png" alt="register image" />
+        </div>
+        {/* <div className="triangle"></div> */}
       </div>
     </div>
     </>
