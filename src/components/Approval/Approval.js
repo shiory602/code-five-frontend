@@ -15,7 +15,7 @@ const Approval = () => {
 
                     
                     <div className="dashboard-button">
-                    <Link to="/"><button className="button-2">Dashboard</button></Link>
+                    <Link to="/"><button className="button">DASHBOARD</button></Link>
                     </div>
 
                     </div>
