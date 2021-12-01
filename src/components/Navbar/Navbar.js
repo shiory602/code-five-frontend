@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import logo from "../logowhite.png";
+import avatar from "../avatar.png";
 import { MenuItems } from "./MenuItems";
 
 import './Navbar.css';

@@ -64,7 +64,11 @@ const Login = () => {
           </div>
         </div>
       </div>
-      <div className="rightBox"></div>
+      <div className="rightBox">
+        <div className="rightBox-img">
+          <img src="/image/login.png" alt="login" />
+        </div>
+      </div>
     </div>
     </>
   )

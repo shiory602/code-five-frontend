@@ -1,5 +1,5 @@
 body {
-    background: linear-gradient(180deg, #B2B3CD 0%, #797AAF 50%, #B2B3CD 100%);
+    background: linear-gradient(180deg, #EBEBEB 0%, #f0e6f7 50%, #EBEBEB 100%);
 }
 
 .dashboard-container {
@@ -9,7 +9,7 @@ body {
     grid-template-rows: 1fr 2fr;
     grid-gap: 1.5rem;
     margin-left: 300px;
-    padding: 50px;
+    padding: 2rem;
     grid-template-areas: 
     "box1 box1 box1 box1"
     "box2 box2 box3 box3"
@@ -121,7 +121,7 @@ body {
 }
 
 .history ul li:hover {
-    transform: scale(1.06);
+    transform: scale(1.03);
     background: #B2B3CD;
 }
 
@@ -146,6 +146,29 @@ body {
 
 .transaction h4 {
     font-size: 20px;
+}
+
+.dashboard-button {
+    text-align: center;
+}
+
+.button-2 {
+  background-color: #30329C;
+  border: 0;
+  border-radius: 5px;
+  color: #EBEBEB;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 16px 48px;
+  text-align: center;
+  text-decoration: none;
+  transition: all .3s;
+}
+
+.button-2:hover {
+    box-shadow: rgba(0, 0, 0, 0.45) 0 10px 18px;
+    transform: translateY(-2px);
 }
 
 @media screen and (max-width: 960px) {
@@ -204,45 +227,3 @@ body {
     }
 }
 
-.dashboard-button {
-    text-align: center;
-}
-
-.button-2 {
-  background-color: #30329C;
-  border: 0;
-  border-radius: 5px;
-  color: #EBEBEB;
-  cursor: pointer;
-  display: inline-block;
-  font-size: 20px;
-  font-weight: 600;
-  outline: 0;
-  padding: 16px 48px;
-  position: relative;
-  text-align: center;
-  text-decoration: none;
-  transition: all .3s;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-}
-
-.button-2:before {
-  background-color: initial;
-  background-image: linear-gradient(#B2B3CD 0, rgba(255, 255, 255, 0) 100%);
-  border-radius: 5px;
-  content: "";
-  height: 20%;
-  left: 0;
-  opacity: .5;
-  position: absolute;
-  top: 0;
-  transition: all .3s;
-  width: 100%;
-}
-
-.button-2:hover {
-    box-shadow: rgba(0, 0, 0, 0.45) 0 10px 18px;
-    transform: translateY(-2px);
-  }

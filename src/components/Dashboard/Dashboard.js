@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import Navbar from '../Navbar/Navbar';
 import InputText from "../inputText";
 
@@ -51,7 +52,7 @@ const Dashboard = () => {
               </ul>
 
               <div className="dashboard-button">
-                <button className="button-2">See more</button>
+              <Link to="/history"><button className="button-2">See more</button></Link>
               </div>
 
             </div>
