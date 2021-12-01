@@ -44,7 +44,12 @@ const Settings = () => {
           <div className="setting_container">
             <h2>Account Setting</h2>
             <div className="setting_image">
-              <img src={fileUrl} id="preview" className="setting_image_icon" />
+              <img
+                src={fileUrl}
+                id="preview"
+                className="setting_image_icon" 
+                alt="icon"
+              />
               <input type="file" onChange={processImage} accept="image/*" />
             </div>
 
