@@ -67,7 +67,7 @@ const Login = () => {
       </div>
       <div className="rightBox">
         <div className="rightBox-img">
-          <img src="/image/login.png" alt="login image" />
+          <img src="/image/login.png" alt="login" />
         </div>
         {/* <div className="triangle"></div> */}
       </div>
