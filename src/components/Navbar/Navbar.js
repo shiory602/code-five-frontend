@@ -28,11 +28,7 @@ const Navbar = () => {
   return (
     <nav className="NavbarItems">
       <h1 className="navbar-logo"><img src={logo} alt="Logo" className="logo" /></h1>
-      <p>
-        {currentUser.email}<br />
-        {currentUserDetails.firstName} {currentUserDetails.lastName}<br />
-        <a onClick={handleLogout}>log out</a>
-      </p>
+    
 
       <div className="menu-icon" onClick={handleClick}>
         <i className={clicked ? 'fas fa-times': 'fas fa-bars'}></i>
@@ -49,6 +45,11 @@ const Navbar = () => {
             </li>
           )
         })}
+        <p>
+          {currentUser.email}<br />
+          {currentUserDetails.firstName} {currentUserDetails.lastName}<br />
+          <a onClick={handleLogout}>log out</a>
+        </p>
       </ul>
     </nav>
   )
