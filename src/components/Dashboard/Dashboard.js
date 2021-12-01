@@ -1,17 +1,18 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import Navbar from '../Navbar/Navbar';
+import InputText from "../inputText";
+
 import "./Dashboard.css";
 import "../../scss-config/material-ui.scss";
-import InputText from "../inputText";
-import {Link } from "react-router-dom";
 
 const Dashboard = () => {
+
   return (
     <div>
       <Navbar />
 
       <div className="dashboard-container">
-
           <div className="dashboard-box1">
             <div className="total">
               <h3>Expenses</h3>
@@ -19,7 +20,7 @@ const Dashboard = () => {
             </div>
             <div className="status">
               <h4>Status:</h4>
-              <h2>Wainting for Approval</h2>
+              <h2>Waiting for Approval</h2>
             </div>
           </div>
 

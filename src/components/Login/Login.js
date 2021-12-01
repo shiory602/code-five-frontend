@@ -1,34 +1,32 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import "./Login.scss";
-import "../../scss-config/material-ui.scss"
+import { Link, useHistory } from "react-router-dom";
 import InputText from "../inputText";
-import { v4 as uuid } from 'uuid';
+
+import "./Login.scss";
+import "../../scss-config/material-ui.scss";
+
+import { useAuth } from '../../contexts/AuthContext';
 
 const Login = () => {
 
-  let [userName, setUserName] = useState("");
-  let [password, setPassword] = useState("");
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
 
-  const onSubmit = (e) => {
+  const { loginUser } = useAuth();
+
+  const redirect = useHistory();
+
+  const onSubmit = async (e) => {
     e.preventDefault();
-    const postingInfo = {
-      profile: {
-        userName,
-        password, 
-      },
-      uid: uuid()
-    };
-    console.log(postingInfo)
-    // auth.createUserWithEmailAndPassword(email, password)
-    //   .then((userCredential) => {
-    //     // setUser(postingInfo);
-    //     insertUser(postingInfo, userCredential.user.uid);
-    //     setStep(step + 1);
-    //   })
-      // .catch(e => {
-      //   console.error(`Error happened: ${e}`);
-      // })
+
+    try {
+      await setError('');
+      await loginUser(email, password);
+      redirect.push('/');
+    } catch (error) {
+      await setError('Sorry, your email or password was incorrect. Please try again.');      
+    }
   };
 
   return (
@@ -39,19 +37,20 @@ const Login = () => {
           <div className="logo-image">
             <img src="/image/CODE5-purple.png" alt="CODE5-purple" />
           </div>
-          <form onSubmit={(e) => onSubmit(e)}>
+          {error !== '' ? error : '' }
+          <form onSubmit={onSubmit}>
             <InputText
-              label="USERNAME"
-              placeholder="Username"
-              type="text"
-              onChange={(e) => setUserName(e.target.value)}
-              value={userName}
+              label="EMAIL"
+              placeholder="Email"
+              type="email"
+              onChange={e => setEmail(e.target.value)}
+              value={email}
             />
             <InputText
               label="PASSWORD"
               placeholder="Password"
               type="password"
-              onChange={(e) => setPassword(e.target.value)}
+              onChange={e => setPassword(e.target.value)}
               value={password}
             />
             <div className="buttonContainer">
@@ -59,8 +58,8 @@ const Login = () => {
             </div>
           </form>
           <div className="sub-message">
-            <p>Don't have an account yet? Click here to 
-            <Link className="bold button-hover" to="register"> Register</Link>
+            <p>
+              Don't have an account yet? Click here to <Link className="bold button-hover" to="register">Register</Link>
             </p>
           </div>
         </div>
@@ -69,7 +68,6 @@ const Login = () => {
         <div className="rightBox-img">
           <img src="/image/login.png" alt="login" />
         </div>
-        {/* <div className="triangle"></div> */}
       </div>
     </div>
     </>
