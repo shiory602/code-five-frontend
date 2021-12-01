@@ -66,7 +66,10 @@ const Login = () => {
         </div>
       </div>
       <div className="rightBox">
-        <div className="triangle"></div>
+        <div className="rightBox-img">
+          <img src="/image/login.png" alt="login" />
+        </div>
+        {/* <div className="triangle"></div> */}
       </div>
     </div>
     </>
