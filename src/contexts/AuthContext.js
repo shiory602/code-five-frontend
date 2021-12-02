@@ -40,7 +40,7 @@ export const AuthProvider = ({ children }) => {
       // save data to the database
       await setDoc(userDoc, docData, {merge: true});
 
-      return true;
+      return '';
     } catch (err) {
       return 'Failed to create an account. Please try again.';
     };
