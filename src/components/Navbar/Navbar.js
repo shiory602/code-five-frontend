@@ -2,13 +2,9 @@ import React, { useState } from "react";
 import logo from "../logowhite.png";
 import avatar from "../avatar.png";
 import { MenuItems } from "./MenuItems";
-<<<<<<< HEAD
-import './Navbar.css';
-=======
 
 import './Navbar.scss';
 
->>>>>>> 8b44ddd7a506a8640452c113a3d6cba0a78e61b7
 import { useAuth } from '../../contexts/AuthContext';
 
 const Navbar = () => {
