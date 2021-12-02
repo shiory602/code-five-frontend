@@ -45,16 +45,16 @@ const Navbar = () => {
             </li>
           )
         })}
-        <p className="navbar-avatar">
+        <div className="navbar-avatar">
           <img src={avatar} alt="Avatar" className="avatar"/>
           <h3>
             {currentUser.email}<br />
             {currentUserDetails.firstName} {currentUserDetails.lastName}<br />
           </h3>
-        </p>
-        <p className="btn-signout">
+        </div>
+        <div className="btn-signout">
           <button onClick={handleLogout}><h3>log out</h3></button>
-        </p>
+        </div>
       </ul>
     </nav>
   )
