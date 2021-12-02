@@ -24,7 +24,6 @@ body {
 
 .approval-page {
     width: 80%;
-    justify-content: space-between;
 }
 
 .approval-page h3 {
@@ -32,8 +31,57 @@ body {
     text-align: center;
 }
 
+.approval-page ul {
+    background: rgba(0,0,0,0.1);
+    padding: 20px;
+    box-shadow: inset 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    margin: 20px;
+}
+
+.approval-page ul li {
+    background: rgba(255,255,255,0.5);
+    margin: 10px 0;
+    transition: .5s;
+    border-radius: 5px;
+    list-style: none;
+}
+
+.approval-avatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    }
+
+.approval-avatar h3 {
+    margin-left: 1rem;
+    color: #3A005C;
+    font-size: 1.2rem;
+}
+
+.avatar {
+    vertical-align: middle;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    border: 2px solid #3A005C;
+}
+
 .approval-btn {
     padding: 0 20%;
+}
+
+.approval-itens {
+    display: flex;
+    flex-wrap: wrap;   
+    align-items: center;
+    justify-content: center;
+}
+
+.approval-itens p {
+    margin: 1rem 1rem;
+    width: 200px;
 }
 
 @media screen and (max-width: 960px) {
@@ -41,6 +89,14 @@ body {
         margin-left: 0;
         margin-top: 80px;
     }
+
+    .approval-page {
+        width: 100%;
+    }
+
+    .approval-avatar {
+        padding: 0;
+        }
 }
 
 @media screen and (max-width: 500px) {
