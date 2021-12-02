@@ -51,8 +51,8 @@ const Dashboard = () => {
                 </li>
               </ul>
 
-              <div className="dashboard-button">
-              <Link to="/history"><button className="button-2">See more</button></Link>
+              <div className="dashboard-history-btn">
+              <Link to="/history"><button className="button">SEE MORE</button></Link>
               </div>
 
             </div>
@@ -60,24 +60,24 @@ const Dashboard = () => {
           <div className="dashboard-box3">
             <form className="transaction">
               <h3>New Transaction</h3>
-              <h4>Description:</h4>
+              <h4>Description:
                 <InputText        
                 placeholder="Description..."
                 type="text"
-                />
-                <h4>Amount:</h4>
+                /></h4>
+                <h4>Amount:
                 <InputText
                 placeholder="Amount..."
                 type="number"
-                />
-                <h4>Image:</h4>
-                <InputText
+                /></h4>
+                <h4>
+                <input
                 placeholder="Image"
                 type="file"
-                />
+                /></h4>
             
-              <div className="dashboard-button">
-                <button className="button-2">Add New</button>
+              <div className="dashboard-add-btn">
+              <button className="button">ADD NEW</button>
               </div>
             </form>
           </div>          
