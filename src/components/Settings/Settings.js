@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Navbar from '../Navbar/Navbar';
 import InputText from "../inputText";
 import "./Setting.scss";
+import avatar from "../avatar.png";
 
 const Settings = () => {
 
@@ -11,7 +12,7 @@ const Settings = () => {
   let [lastName, setLastName] = useState("");
   let [email, setEmail] = useState("");
   let [password, setPassword] = useState("");
-  let [fileUrl, setFileUrl] = useState(null);
+  let [fileUrl, setFileUrl] = useState(avatar);
 
   function processImage(event){
     const imageFile = event.target.files[0];
