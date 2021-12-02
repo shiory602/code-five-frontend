@@ -4,15 +4,17 @@ import Navbar from '../Navbar/Navbar';
 import InputText from "../inputText";
 import "./Setting.scss";
 import avatar from "../avatar.png";
+import { useAuth } from '../../contexts/AuthContext';
 
 const Settings = () => {
 
-  let [userName, setUserName] = useState("");
+  // let [userName, setUserName] = useState("");
   let [firstName, setFirstName] = useState("");
   let [lastName, setLastName] = useState("");
   let [email, setEmail] = useState("");
   let [password, setPassword] = useState("");
   let [fileUrl, setFileUrl] = useState(avatar);
+  const { currentUser, currentUserDetails } = useAuth();
 
   function processImage(event){
     const imageFile = event.target.files[0];
@@ -20,11 +22,11 @@ const Settings = () => {
     setFileUrl(imageUrl)
   }
 
-  const onSubmit = (e) => {
+  function onSubmit(e) {
     e.preventDefault();
     const postingInfo = {
       profile: {
-        userName,
+        // userName,
         firstName,
         lastName,
         email,
@@ -59,13 +61,23 @@ const Settings = () => {
                 <div className="row-container">
                   <InputText
                     className="row-item"
+                    label="EMAIL"
+                    placeholder="Email"
+                    type="email"
+                    onChange={(e) => setEmail(e.target.value)}
+                    value={currentUser.email}
+                  />
+                </div>
+                {/* <div className="row-container">
+                  <InputText
+                    className="row-item"
                     label="USERNAME"
                     placeholder="Username"
                     type="text"
                     onChange={(e) => setUserName(e.target.value)}
                     value={userName}
                   />
-                </div>
+                </div> */}
                 <div className="row-container">
                   <InputText
                     className="row-item"
@@ -73,7 +85,7 @@ const Settings = () => {
                     placeholder="Password"
                     type="password"
                     onChange={(e) => setPassword(e.target.value)}
-                    value={password}
+                    value={currentUser.password}
                   />
                 </div>
               </div>
@@ -85,7 +97,7 @@ const Settings = () => {
                     placeholder="First name"
                     type="text"
                     onChange={(e) => setFirstName(e.target.value)}
-                    value={firstName}
+                    value={currentUserDetails.firstName}
                   />
                 </div>
                 <div className="row-container">
@@ -95,11 +107,11 @@ const Settings = () => {
                     placeholder="Last name"
                     type="text"
                     onChange={(e) => setLastName(e.target.value)}
-                    value={lastName}
+                    value={currentUserDetails.lastName}
                   />
                 </div>
               </div>
-              <div className="row">
+              {/* <div className="row">
                 <div className="row-container">
                   <InputText
                     className="row-item"
@@ -107,10 +119,10 @@ const Settings = () => {
                     placeholder="Email"
                     type="email"
                     onChange={(e) => setEmail(e.target.value)}
-                    value={email}
+                    value={currentUser.email}
                   />
                 </div>
-              </div>
+              </div> */}
               <div className="buttons">
                 <div className="button-container">
                   <button className="button" variant="contained">SAVE</button>
