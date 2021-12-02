@@ -1,5 +1,7 @@
+@import "../../scss-config/color.scss";
+
 .NavbarItems {
-    background: #7400B8;
+    background-color: $color_point;
     font-size: 1.8rem;
     position: fixed;
     left: 0;
@@ -48,7 +50,7 @@
 .nav-links {
     width: 100%;
     height: 50px;
-    color: #FBFEFB;
+    color: $color_light;
     text-decoration: none;
     display: flex;
     flex-direction: row;
@@ -99,9 +101,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #FBFEFB;
-    font-size: 1.6rem;
-    cursor: pointer;
+
+    button {
+        color: $color_light;
+        background-color: $color_primary;
+        font-size: 1.6rem;
+        cursor: pointer;
+    }
 }
 
 .btn-signout h3 {  
