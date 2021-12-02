@@ -72,8 +72,8 @@ const History = () => {
                         </li>
                     </ul>
 
-                    <div className="dashboard-button">
-                    <Link to="/"><button className="button-2">Dashboard</button></Link>
+                    <div className="history-btn">
+                    <Link to="/"><button className="button">DASHBOARD</button></Link>
                     </div>
 
                     </div>
