@@ -3,7 +3,7 @@ import logo from "../logowhite.png";
 import avatar from "../avatar.png";
 import { MenuItems } from "./MenuItems";
 
-import './Navbar.css';
+import './Navbar.scss';
 
 import { useAuth } from '../../contexts/AuthContext';
 
@@ -53,7 +53,7 @@ const Navbar = () => {
           </h3>
         </p>
         <p className="btn-signout">
-          <a onClick={handleLogout}><h3>log out</h3></a>
+          <button onClick={handleLogout}><h3>log out</h3></button>
         </p>
       </ul>
     </nav>
