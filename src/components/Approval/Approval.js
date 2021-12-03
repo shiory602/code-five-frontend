@@ -26,7 +26,7 @@ const Approval = () => {
                                     </h3>
                                 </p>
                                 <p>
-                                    <Link to="/history"><button className="button">DETAILS</button></Link>
+                                    <Link to="/approval"><button className="button">DETAILS</button></Link>
                                 </p>    
                                 <p>
                                     <button className="button">APPROVE</button>
@@ -43,7 +43,7 @@ const Approval = () => {
                                     </h3>
                                 </p>
                                 <p>
-                                    <Link to="/history"><button className="button">DETAILS</button></Link>
+                                    <Link to="/approval"><button className="button">DETAILS</button></Link>
                                 </p>    
                                 <p>
                                     <button className="button">APPROVE</button>
