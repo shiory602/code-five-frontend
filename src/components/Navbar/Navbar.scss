@@ -22,11 +22,10 @@
     margin-top: 1rem;
     margin-left: 2rem;
     cursor: pointer;
-}
-
-.navbar-logo img {
-    max-height: 55px;
-    width: auto;
+    img {
+        max-height: 55px;
+        width: auto;
+    }
 }
 
 .nav-menu {
@@ -64,16 +63,10 @@
     cursor: pointer;
 }
 
-.fa-bars {
-    color: #FBFEFB;
-}
-
-.fa-times {
-    color: #FBFEFB;
-}
 
 .menu-icon {
     display: none;
+    color: #FBFEFB;
 }
 
 .navbar-avatar {
@@ -81,44 +74,27 @@
     justify-content: center;
     align-items: center;
     padding: 3rem 1rem;
+
+    .avatar {
+        vertical-align: middle;
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+        border: 2px solid #3A005C;
     }
 
-.navbar-avatar h3 {
-    margin-left: 1rem;
-    color: #FBFEFB;
-    font-size: 1rem;
-}
-
-.avatar {
-    vertical-align: middle;
-    width: 4rem;
-    height: 4rem;
-    border-radius: 50%;
-    border: 2px solid #3A005C;
-}
+    h3 {
+        margin-left: 1rem;
+        color: #FBFEFB;
+        font-size: 1rem;
+    }
+    }
 
 .btn-signout {
     display: flex;
     justify-content: center;
     align-items: center;
-
-    button {
-        color: $color_light;
-        background-color: $color_primary;
-        font-size: 1.6rem;
-        cursor: pointer;
-    }
-}
-
-.btn-signout h3 {  
-    color: #FBFEFB;
-    font-size: 1.6rem;
-    cursor: pointer;
-}
-
-.btn-signout h3:hover {  
-    color: #B2B3CD;
-    font-size: 1.7rem;
+    margin: 0 20%;
 }
 
 @media screen and (max-width: 960px) {
