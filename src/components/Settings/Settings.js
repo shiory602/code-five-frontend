@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from "react-router-dom";
 import Navbar from '../Navbar/Navbar';
 import InputText from "../inputText";
 import "./Setting.scss";
@@ -8,7 +7,6 @@ import { useAuth } from '../../contexts/AuthContext';
 
 const Settings = () => {
 
-  // let [userName, setUserName] = useState("");
   let [firstName, setFirstName] = useState("");
   let [lastName, setLastName] = useState("");
   let [email, setEmail] = useState("");
@@ -26,7 +24,6 @@ const Settings = () => {
     e.preventDefault();
     const postingInfo = {
       profile: {
-        // userName,
         firstName,
         lastName,
         email,
@@ -37,6 +34,14 @@ const Settings = () => {
     };
     console.log(postingInfo)
   };
+
+  function onClick(e) {
+    e.preventDefault(e);
+    setEmail(currentUser.email);
+    setPassword(currentUser.password);
+    setFirstName(currentUserDetails.firstName);
+    setLastName(currentUserDetails.lastName);
+  }
 
   return (
     <div>
@@ -68,16 +73,6 @@ const Settings = () => {
                     value={currentUser.email}
                   />
                 </div>
-                {/* <div className="row-container">
-                  <InputText
-                    className="row-item"
-                    label="USERNAME"
-                    placeholder="Username"
-                    type="text"
-                    onChange={(e) => setUserName(e.target.value)}
-                    value={userName}
-                  />
-                </div> */}
                 <div className="row-container">
                   <InputText
                     className="row-item"
@@ -128,7 +123,7 @@ const Settings = () => {
                   <button className="button" variant="contained">SAVE</button>
                 </div>
                 <div className="sub-message">
-                  <Link className="bold button-hover" to="/">CANCEL</Link>
+                  <button onClick={(e)=>onClick(e)} className="bold button-hover">RESET</button>
                 </div>
               </div>
             </form>
