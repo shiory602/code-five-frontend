@@ -14,7 +14,10 @@ body {
   grid-gap: 1.5rem;
   margin-left: 300px;
   padding: 2rem;
-      grid-template-areas: "box1 box1 box1 box1" "box2 box2 box3 box3" "box4 box4 box3 box3" "box4 box4 box5 box5";
+      grid-template-areas: "box1 box1 box1 box1"
+ "box2 box2 box3 box3"
+ "box4 box4 box3 box3"
+ "box4 box4 box5 box5";
 }
 
 .dashboard-box1 {
@@ -143,12 +146,16 @@ body {
 }
 
 .history ul li span:nth-child(1) {
-  width: 20%;
+    width: 50%;
 }
 
 .history ul li span:nth-child(2) {
-  width: 80%;
-  text-align: right;
+    width: 30%;
+}
+
+.history ul li span:nth-child(3) {
+    width: 20%;
+    text-align: right;
 }
 
 .history ul li:hover {
@@ -180,16 +187,6 @@ body {
   border-right: 1px solid rgba(255, 255, 255, 0.2);
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   padding: 1rem;
-}
-
-.transaction h3 {
-  font-size: 35px;
-  margin-bottom: 20px;
-}
-
-.transaction h4 {
-  font-size: 20px;
-  margin: 2rem 0;
 }
 
 .dashboard-box4 {
@@ -263,7 +260,11 @@ body {
         grid-template-columns: 1fr;
     -ms-grid-rows: 1fr 2fr 2fr 2fr 1fr;
         grid-template-rows: 1fr 2fr 2fr 2fr 1fr;
-        grid-template-areas: "box1" "box2" "box3" "box4" "box5";
+        grid-template-areas: "box1"
+ "box2"
+ "box3"
+ "box4"
+ "box5";
   }
   .total h3 {
     font-size: 30px;
