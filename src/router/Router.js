@@ -5,6 +5,7 @@ import { createBrowserHistory } from "history";
 // import Wrapper from "../components/Wrapper/Wrapper";
 
 import { AuthProvider } from '../contexts/AuthContext';
+import { ExpensesProvider } from '../contexts/ExpensesContext';
 
 import PrivateRoute from '../components/PrivateRoute/PrivateRoute';
 
@@ -23,12 +24,14 @@ const AppRouter = () => {
       {/* <Wrapper> */}
         <Switch>
           <AuthProvider>
-            <PrivateRoute path="/" component={Dashboard} exact={true} />
-            <Route path="/login" component={Login} />
-            <Route path="/register" component={Register} />
-            <PrivateRoute path="/history" component={History} />
-            <PrivateRoute path="/approval" component={Approval} />
-            <PrivateRoute path="/settings" component={Settings} />
+            <ExpensesProvider>
+              <PrivateRoute path="/" component={Dashboard} exact={true} />
+              <Route path="/login" component={Login} />
+              <Route path="/register" component={Register} />
+              <PrivateRoute path="/history" component={History} />
+              <PrivateRoute path="/approval" component={Approval} />
+              <PrivateRoute path="/settings" component={Settings} />
+            </ExpensesProvider>
           </AuthProvider>
         </Switch>
       {/* </Wrapper> */}

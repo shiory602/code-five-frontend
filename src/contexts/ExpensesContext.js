@@ -1,12 +1,9 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
-import { auth, firestore } from '../firebase';
-import { doc, getDoc, setDoc } from 'firebase/firestore';
+import { firestore } from '../firebase';
+import { collection, addDoc, getDocs, query, where, orderBy, serverTimestamp } from 'firebase/firestore';
 
-let curUserDetails = {
-  firstName: '',
-  lastName: ''
-};
+import { useAuth } from './AuthContext';
 
 const ExpensesContext = createContext();
 
@@ -15,44 +12,88 @@ export const useExpenses = () => {
 };
 
 export const ExpensesProvider = ({ children }) => {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
+  const [listCategories, setListCategories] = useState([]);
+  const [listExpenses, setListExpenses] = useState([]);
+
+  const { currentUser } = useAuth();
+
+  const createExpense = async (category, description, amount, user) => {
+    try {
+      await addDoc(collection(firestore, 'expenses'), {
+        category,
+        description,
+        amount: parseFloat(amount),
+        user,
+        approved: false,
+        approvedBy: '',
+        timestamp: serverTimestamp()
+      });
+
+      setLoading(true);
+    } catch (err) {
+      return 'Failed to create an expense. Please try again.';
+    };
+  };
 
   useEffect(() => {
-    (async () => {
-      if (currentUser) {
-        const { uid } = currentUser;
-        const docRef = await doc(firestore, `users/${uid}`);
-        const docSnap = await getDoc(docRef);
-        let firstName = '';
-        let lastName = '';
+    const getCategories = async () => {
+      try {
+        const q = query(collection(firestore, 'categories'), orderBy('description'));
+        const querySnapshot = await getDocs(q);
 
-        if (docSnap.exists()) {
-          firstName = await docSnap.data().firstName;
-          lastName = await docSnap.data().lastName;
-        }
+        const categories = [];
 
-        curUserDetails = {
-          firstName,
-          lastName
-        };
-      }
-      else {
-        curUserDetails = {
-          firstName: '',
-          lastName: ''
-        };
-      }
-      
-      await setCurrentUserDetails(curUserDetails);
-    })();
+        querySnapshot.forEach((doc) => {
+          const { id, description } = doc.data();
+          categories.push({
+            id,
+            description
+          });
+        });
+
+        setListCategories(categories);
+        setLoading(false);
+      } catch (err) {
+        console.error(err.message);
+      };
+    };
+
+    getCategories();
   }, []);
 
+  useEffect(() => {
+    const getExpenses = async () => {
+      try {
+        const q = query(collection(firestore, 'expenses'), where('user', '==', currentUser.uid), orderBy('timestamp'));
+        const querySnapshot = await getDocs(q);
+
+        const expenses = [];
+
+        querySnapshot.forEach((doc) => {
+          // console.log(doc.id, " => ", doc.data());
+          const { category, description, amount } = doc.data();
+          expenses.push({
+            category,
+            description,
+            amount
+          });
+        });
+
+        setListExpenses(expenses);
+        setLoading(false);
+      } catch (err) {
+        console.error(err.message);
+      };
+    };
+
+    getExpenses();
+  }, [loading, currentUser]);
+
   const value = {
-    currentUser,
-    currentUserDetails,
-    createUser,
-    loginUser,
-    logoutUser
+    createExpense,
+    listCategories,
+    listExpenses
   };
 
   return (
