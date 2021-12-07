@@ -7,10 +7,10 @@ import { useAuth } from '../../contexts/AuthContext';
 
 const Settings = () => {
 
-  let [firstName, setFirstName] = useState("");
-  let [lastName, setLastName] = useState("");
-  let [email, setEmail] = useState("");
-  let [password, setPassword] = useState("");
+  let [firstName, setFirstName] = useState("First Name");
+  let [lastName, setLastName] = useState("Last Name");
+  let [email, setEmail] = useState("Email");
+  let [password, setPassword] = useState("Password");
   let [fileUrl, setFileUrl] = useState(avatar);
   const { currentUser, currentUserDetails } = useAuth();
 
@@ -67,20 +67,18 @@ const Settings = () => {
                   <InputText
                     className="row-item"
                     label="EMAIL"
-                    placeholder="Email"
+                    placeholder={currentUser.email}
                     type="email"
                     onChange={(e) => setEmail(e.target.value)}
-                    value={currentUser.email}
                   />
                 </div>
                 <div className="row-container">
                   <InputText
                     className="row-item"
                     label="PASSWORD"
-                    placeholder="Password"
+                    placeholder={currentUser.password}
                     type="password"
                     onChange={(e) => setPassword(e.target.value)}
-                    value={currentUser.password}
                   />
                 </div>
               </div>
@@ -89,35 +87,21 @@ const Settings = () => {
                   <InputText
                     className="row-item"
                     label="FIRST NAME"
-                    placeholder="First name"
+                    placeholder={currentUserDetails.firstName}
                     type="text"
                     onChange={(e) => setFirstName(e.target.value)}
-                    value={currentUserDetails.firstName}
                   />
                 </div>
                 <div className="row-container">
                   <InputText
                     className="row-item"
                     label="LAST NAME"
-                    placeholder="Last name"
+                    placeholder={currentUserDetails.lastName}
                     type="text"
                     onChange={(e) => setLastName(e.target.value)}
-                    value={currentUserDetails.lastName}
                   />
                 </div>
               </div>
-              {/* <div className="row">
-                <div className="row-container">
-                  <InputText
-                    className="row-item"
-                    label="EMAIL"
-                    placeholder="Email"
-                    type="email"
-                    onChange={(e) => setEmail(e.target.value)}
-                    value={currentUser.email}
-                  />
-                </div>
-              </div> */}
               <div className="buttons">
                 <div className="button-container">
                   <button className="button" variant="contained">SAVE</button>
