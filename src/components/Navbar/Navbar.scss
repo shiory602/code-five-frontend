@@ -22,11 +22,10 @@
     margin-top: 1rem;
     margin-left: 2rem;
     cursor: pointer;
-}
-
-.navbar-logo img {
-    max-height: 55px;
-    width: auto;
+    img {
+        max-height: 55px;
+        width: auto;
+    }
 }
 
 .nav-menu {
@@ -59,21 +58,15 @@
 }
 
 .nav-links:hover {
-    background-color: #3A005C;
+    background-color: $color_hover;
     transition: all 0.2s ease-out;
     cursor: pointer;
 }
 
-.fa-bars {
-    color: #FBFEFB;
-}
-
-.fa-times {
-    color: #FBFEFB;
-}
 
 .menu-icon {
     display: none;
+    color: $color_light;
 }
 
 .navbar-avatar {
@@ -81,47 +74,30 @@
     justify-content: center;
     align-items: center;
     padding: 3rem 1rem;
+
+    .avatar {
+        vertical-align: middle;
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+        border: 2px solid $color_hover;
     }
 
-.navbar-avatar h3 {
-    margin-left: 1rem;
-    color: #FBFEFB;
-    font-size: 1rem;
-}
-
-.avatar {
-    vertical-align: middle;
-    width: 4rem;
-    height: 4rem;
-    border-radius: 50%;
-    border: 2px solid #3A005C;
-}
+    h3 {
+        margin-left: 1rem;
+        color: $color_light;
+        font-size: 1rem;
+    }
+    }
 
 .btn-signout {
     display: flex;
     justify-content: center;
     align-items: center;
-
-    button {
-        color: $color_light;
-        background-color: $color_primary;
-        font-size: 1.6rem;
-        cursor: pointer;
-    }
+    margin: 0 20%;
 }
 
-.btn-signout h3 {  
-    color: #FBFEFB;
-    font-size: 1.6rem;
-    cursor: pointer;
-}
-
-.btn-signout h3:hover {  
-    color: #B2B3CD;
-    font-size: 1.7rem;
-}
-
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 970px) {
     .NavbarItems {
         position: relative;
         width: 100%;
@@ -157,12 +133,12 @@
     }
 
     .nav-menu.active {
-        background: #7400B8;
+        background: $color_point;
         right: 0;
         opacity: 1;
         transition: all 0.5s ease;
         z-index: 999;   
-        border-top: 4px solid #3A005C;
+        border-top: 4px solid $color_hover;
     }
 
     #icon {
@@ -177,8 +153,8 @@
     }
 
     .nav-links:hover {
-        color: #FBFEFB;
-        background-color: #3A005C;
+        color: $color_light;
+        background-color: $color_hover;
         transition: all 0.2s ease-out;
     }
 
@@ -193,7 +169,7 @@
     }
 
     .fa-times {
-        color: #FBFEFB;
+        color: $color_light;
         font-size: 2rem;
     }
 

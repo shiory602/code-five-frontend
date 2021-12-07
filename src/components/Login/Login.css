@@ -1,0 +1,71 @@
+.login-main {
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: #fbfefb;
+}
+
+.login-main .leftBox {
+  width: 50%;
+  margin: 40px 68px 100px;
+}
+
+@media screen and (max-width: 768px) {
+  .login-main .leftBox {
+    width: 100%;
+    margin: 10px auto;
+  }
+}
+
+.login-main .leftBox .leftBox-container {
+  font-size: 24px;
+}
+
+@media screen and (max-width: 768px) {
+  .login-main .leftBox .leftBox-container {
+    font-size: 27px;
+    margin: 35px;
+  }
+}
+
+.login-main .leftBox .leftBox-container form {
+  width: 80%;
+  margin-top: 58px;
+}
+
+.login-main .leftBox .leftBox-container .sub-message {
+  margin-top: 20px;
+}
+
+.login-main .leftBox .leftBox-container .sub-message .bold {
+  font-weight: bold;
+}
+
+.login-main .rightBox {
+  width: 50%;
+  background-color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.login-main .rightBox-img {
+  width: 100%;
+  margin: 20px;
+}
+
+.login-main .rightBox-img img {
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .login-main .rightBox {
+    display: none;
+  }
+}
+/*# sourceMappingURL=Login.css.map */

@@ -1,12 +1,21 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import Navbar from '../Navbar/Navbar';
-import InputText from "../inputText";
+import Expenses from '../Expenses/Expenses';
+
+import { useExpenses } from '../../contexts/ExpensesContext';
 
 import "./Dashboard.css";
 import "../../scss-config/material-ui.scss";
+import Footer from '../Footer/Footer';
 
 const Dashboard = () => {
+
+  const { listExpenses } = useExpenses();
+
+  const totalExpenses = listExpenses.reduce((total, item) => {
+    return total + (item.approved !== true ? item.amount : 0);
+  }, 0);
 
   return (
     <div>
@@ -16,7 +25,7 @@ const Dashboard = () => {
           <div className="dashboard-box1">
             <div className="total">
               <h3>Expenses</h3>
-              <h1>$980.00</h1>
+              <h1>$ {totalExpenses}</h1>
             </div>
             <div className="status">
               <h4>Status:</h4>
@@ -29,26 +38,15 @@ const Dashboard = () => {
               <h3>History</h3>
 
               <ul>
-                <li>
-                  <span className="name">Lunch</span>
-                  <span className="value">$ 60</span>
-                </li>
-                <li>
-                  <span className="name">Taxi</span>
-                  <span className="value">$ 40</span>
-                </li>
-                <li>
-                  <span className="name">Gas</span>
-                  <span className="value">$ 80</span>
-                </li>
-                <li>
-                  <span className="name">Lunch</span>
-                  <span className="value">$ 60</span>
-                </li>
-                <li>
-                  <span className="name">Taxi</span>
-                  <span className="value">$ 100</span>
-                </li>
+                {listExpenses.length > 0 ? listExpenses.map((expense, idx) => {
+                  return (
+                    <li key={idx}>
+                      <span className="category">{expense.category}</span>
+                      <span className="name">{expense.description}</span>
+                      <span className="value">$ {expense.amount}</span>
+                    </li>
+                  )
+                }) : ''}
               </ul>
 
               <div className="dashboard-history-btn">
@@ -58,29 +56,17 @@ const Dashboard = () => {
             </div>
           </div>
           <div className="dashboard-box3">
-            <form className="transaction">
-              <h3>New Transaction</h3>
-              <h4>Description:
-                <InputText        
-                placeholder="Description..."
-                type="text"
-                /></h4>
-                <h4>Amount:
-                <InputText
-                placeholder="Amount..."
-                type="number"
-                /></h4>
-                <h4>
-                <input
-                placeholder="Image"
-                type="file"
-                /></h4>
-            
-              <div className="dashboard-add-btn">
-              <button className="button">ADD NEW</button>
-              </div>
-            </form>
+            <Expenses />
           </div>          
+          <div className="dashboard-box4">
+            <form className="transaction">
+              <h3>Expense Categories</h3>
+              
+            </form>
+          </div> 
+          <div className="dashboard-box5">
+            <Footer></Footer>
+          </div>              
       </div>
 
     </div>
@@ -88,3 +74,16 @@ const Dashboard = () => {
 }
 
 export default Dashboard;
+
+
+/* Transport Tickets (Airplane, Train, Bus...)
+Baggage fees
+Rental cars
+Fuel
+Public transportation costs
+Uber and ridesharing services
+Hotel rooms and accommodations
+Business meals, food and beverages
+Convention expenses
+Road tolls
+Parking fees */

@@ -25,10 +25,12 @@ const Register = () => {
 
     try {
       await setError('');
-      await createUser(email, password, firstName, lastName);
-      redirect.push('/');
+      const msgError = await createUser(email, password, firstName, lastName);
+
+      if (msgError === '') redirect.push('/');
+      else setError(msgError);
     } catch (err) {
-      await setError('Error: failed to create an account. Please try again.');
+      await setError('Failed to create an account. Please try again.');
     }
   };
 
