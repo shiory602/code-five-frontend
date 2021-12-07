@@ -25,12 +25,14 @@ const Approval = () => {
                                         firstName lastName<br />
                                     </h3>
                                 </p>
-                                <p>
-                                    <Link to="/history"><button className="button">DETAILS</button></Link>
-                                </p>    
-                                <p>
-                                    <button className="button">APPROVE</button>
-                                </p>
+                                <div className="approval-options">
+                                    <p>
+                                        <Link to="/approval"><button className="button">DETAILS</button></Link>
+                                    </p>    
+                                    <p>
+                                        <button className="button">APPROVE</button>
+                                    </p>
+                                </div>   
                             </div>
                         </li>
                         <li>                            
@@ -42,12 +44,14 @@ const Approval = () => {
                                         firstName lastName<br />
                                     </h3>
                                 </p>
-                                <p>
-                                    <Link to="/history"><button className="button">DETAILS</button></Link>
-                                </p>    
-                                <p>
-                                    <button className="button">APPROVE</button>
-                                </p>
+                                <div className="approval-options">
+                                    <p>
+                                        <Link to="/approval"><button className="button">DETAILS</button></Link>
+                                    </p>    
+                                    <p>
+                                        <button className="button">APPROVE</button>
+                                    </p>
+                                </div>    
                             </div> 
                         </li>
                     </ul>

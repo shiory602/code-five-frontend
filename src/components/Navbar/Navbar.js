@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import logo from "../logowhite.png";
 import avatar from "../avatar.png";
 import { MenuItems } from "./MenuItems";
+import "../../scss-config/material-ui.scss";
 
 import './Navbar.scss';
 
@@ -53,7 +54,7 @@ const Navbar = () => {
           </h3>
         </div>
         <div className="btn-signout">
-          <button onClick={handleLogout}><h3>log out</h3></button>
+          <button onClick={handleLogout} className="button">LOG OUT</button>
         </div>
       </ul>
     </nav>

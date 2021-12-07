@@ -7,6 +7,7 @@ import { useExpenses } from '../../contexts/ExpensesContext';
 
 import "./Dashboard.css";
 import "../../scss-config/material-ui.scss";
+import Footer from '../Footer/Footer';
 
 const Dashboard = () => {
 
@@ -57,6 +58,15 @@ const Dashboard = () => {
           <div className="dashboard-box3">
             <Expenses />
           </div>          
+          <div className="dashboard-box4">
+            <form className="transaction">
+              <h3>Expense Categories</h3>
+              
+            </form>
+          </div> 
+          <div className="dashboard-box5">
+            <Footer></Footer>
+          </div>              
       </div>
 
     </div>
@@ -64,3 +74,16 @@ const Dashboard = () => {
 }
 
 export default Dashboard;
+
+
+/* Transport Tickets (Airplane, Train, Bus...)
+Baggage fees
+Rental cars
+Fuel
+Public transportation costs
+Uber and ridesharing services
+Hotel rooms and accommodations
+Business meals, food and beverages
+Convention expenses
+Road tolls
+Parking fees */
