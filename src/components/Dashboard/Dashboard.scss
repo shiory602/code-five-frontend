@@ -6,15 +6,17 @@ body {
 
 .dashboard-container {
     display: grid;
-    height: 100vh;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 2fr;
+    height: 100%;
+    grid-template-columns: 2fr 1fr 1fr 2fr;
+    grid-template-rows: 1fr 2fr 1fr 1fr;
     grid-gap: 1.5rem;
     margin-left: 300px;
     padding: 2rem;
     grid-template-areas: 
     "box1 box1 box1 box1"
     "box2 box2 box3 box3"
+    "box4 box4 box3 box3"
+    "box4 box4 box5 box5"
 }
 
 .dashboard-box1 {
@@ -155,11 +157,41 @@ body {
     }
 } 
 
+.dashboard-box4 {
+    grid-area: box4;
+    background: rgba(255,255,255,0.1);
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    box-shadow: 0 35px 45px rgba(0,0,0,0.1);
+    border: 1px solid rgba(255,255,255,0.5);
+    border-right: 1px solid rgba(255,255,255,0.2);
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    padding: 1rem;
+}
+
+.dashboard-box5 {
+    grid-area: box5;
+    background: rgba(255,255,255,0.1);
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    box-shadow: 0 35px 45px rgba(0,0,0,0.1);
+    border: 1px solid rgba(255,255,255,0.5);
+    border-right: 1px solid rgba(255,255,255,0.2);
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    padding: 1rem;
+}
+
 .dashboard-add-btn, .dashboard-history-btn {
     padding: 0 5%;
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 970px) {
     .dashboard-container {
         margin-left: 0;
         margin-top: 80px;
@@ -170,11 +202,13 @@ body {
     .dashboard-container {
         grid-gap: 1rem;
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 2fr 2fr 2fr 1fr;
         grid-template-areas:
         "box1"
         "box2"
         "box3"
+        "box4"
+        "box5"
     }
 
     .total {
@@ -186,8 +220,8 @@ body {
         
         h1 {
             font-size: 50px;
-            margin-left: 20px;
-            margin-top: 20px;
+            margin-left: 10px;
+            margin-top: 0px;
         }
     } 
 

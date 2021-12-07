@@ -6,15 +6,15 @@ body {
 .dashboard-container {
   display: -ms-grid;
   display: grid;
-  height: 100vh;
-  -ms-grid-columns: 1fr 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-  -ms-grid-rows: 1fr 2fr;
-      grid-template-rows: 1fr 2fr;
+  height: 100%;
+  -ms-grid-columns: 2fr 1fr 1fr 2fr;
+      grid-template-columns: 2fr 1fr 1fr 2fr;
+  -ms-grid-rows: 1fr 2fr 1fr 1fr;
+      grid-template-rows: 1fr 2fr 1fr 1fr;
   grid-gap: 1.5rem;
   margin-left: 300px;
   padding: 2rem;
-      grid-template-areas: "box1 box1 box1 box1" "box2 box2 box3 box3";
+      grid-template-areas: "box1 box1 box1 box1" "box2 box2 box3 box3" "box4 box4 box3 box3" "box4 box4 box5 box5";
 }
 
 .dashboard-box1 {
@@ -159,6 +159,7 @@ body {
 
 .dashboard-box3 {
   -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
   -ms-grid-column: 3;
   -ms-grid-column-span: 2;
   grid-area: box3;
@@ -191,11 +192,64 @@ body {
   margin: 2rem 0;
 }
 
+.dashboard-box4 {
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: box4;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: 0 35px 45px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 35px 45px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 1rem;
+}
+
+.dashboard-box5 {
+  -ms-grid-row: 4;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 2;
+  grid-area: box5;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: 0 35px 45px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 35px 45px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 1rem;
+}
+
 .dashboard-add-btn, .dashboard-history-btn {
   padding: 0 5%;
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 970px) {
   .dashboard-container {
     margin-left: 0;
     margin-top: 80px;
@@ -207,9 +261,9 @@ body {
     grid-gap: 1rem;
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
-    -ms-grid-rows: 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
-        grid-template-areas: "box1" "box2" "box3";
+    -ms-grid-rows: 1fr 2fr 2fr 2fr 1fr;
+        grid-template-rows: 1fr 2fr 2fr 2fr 1fr;
+        grid-template-areas: "box1" "box2" "box3" "box4" "box5";
   }
   .total h3 {
     font-size: 30px;
@@ -218,8 +272,8 @@ body {
   }
   .total h1 {
     font-size: 50px;
-    margin-left: 20px;
-    margin-top: 20px;
+    margin-left: 10px;
+    margin-top: 0px;
   }
   .status h4 {
     font-size: 20px;
