@@ -14,10 +14,7 @@ body {
   grid-gap: 1.5rem;
   margin-left: 300px;
   padding: 2rem;
-      grid-template-areas: "box1 box1 box1 box1"
- "box2 box2 box3 box3"
- "box4 box4 box3 box3"
- "box4 box4 box5 box5";
+      grid-template-areas: "box1 box1 box1 box1" "box2 box2 box3 box3" "box4 box4 box3 box3" "box4 box4 box5 box5";
 }
 
 .dashboard-box1 {
@@ -121,12 +118,18 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   background: rgba(255, 255, 255, 0.1);
   padding: 5px 10px;
   margin: 5px 0;
   -webkit-transition: .5s;
   transition: .5s;
   border-radius: 5px;
+}
+
+.history ul li span {
+  margin-right: 1rem;
 }
 
 .history ul li:nth-child(1) {
@@ -146,16 +149,17 @@ body {
 }
 
 .history ul li span:nth-child(1) {
-    width: 50%;
+  width: 50%;
 }
 
 .history ul li span:nth-child(2) {
-    width: 30%;
+  width: 18%;
+  text-align: right;
 }
 
 .history ul li span:nth-child(3) {
-    width: 20%;
-    text-align: right;
+  width: 20%;
+  text-align: right;
 }
 
 .history ul li:hover {
@@ -187,6 +191,16 @@ body {
   border-right: 1px solid rgba(255, 255, 255, 0.2);
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   padding: 1rem;
+}
+
+.transaction h3 {
+  font-size: 35px;
+  margin-bottom: 20px;
+}
+
+.transaction h4 {
+  font-size: 20px;
+  margin: 2rem 0;
 }
 
 .dashboard-box4 {
@@ -221,25 +235,6 @@ body {
   -ms-grid-column: 3;
   -ms-grid-column-span: 2;
   grid-area: box5;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-shadow: 0 35px 45px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 35px 45px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  border-right: 1px solid rgba(255, 255, 255, 0.2);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 1rem;
 }
 
 .dashboard-add-btn, .dashboard-history-btn {
@@ -260,11 +255,7 @@ body {
         grid-template-columns: 1fr;
     -ms-grid-rows: 1fr 2fr 2fr 2fr 1fr;
         grid-template-rows: 1fr 2fr 2fr 2fr 1fr;
-        grid-template-areas: "box1"
- "box2"
- "box3"
- "box4"
- "box5";
+        grid-template-areas: "box1" "box2" "box3" "box4" "box5";
   }
   .total h3 {
     font-size: 30px;

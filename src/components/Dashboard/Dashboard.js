@@ -65,7 +65,7 @@ const Dashboard = () => {
             </form>
           </div> 
           <div className="dashboard-box5">
-            <Footer></Footer>
+            <Footer />
           </div>              
       </div>
 

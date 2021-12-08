@@ -1,0 +1,62 @@
+.footer {
+  background-color: #7400B8;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 35px 45px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 35px 45px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 2rem;
+}
+
+.footer-logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 2rem 0;
+}
+
+.footer-logo img {
+  max-height: 45px;
+  width: auto;
+}
+
+.footer-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  list-style: none;
+  margin-bottom: 2rem;
+}
+
+.footer-list li {
+  margin-right: 30px;
+  cursor: pointer;
+}
+
+.footer-list li:hover {
+  -webkit-transform: scale(1.3);
+          transform: scale(1.3);
+  color: #000000;
+}
+
+.copyright {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #EBEBEB;
+  line-height: 40px;
+  font-size: 0.9em;
+}
+/*# sourceMappingURL=Footer.css.map */
