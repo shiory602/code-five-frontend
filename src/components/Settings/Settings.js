@@ -4,15 +4,16 @@ import InputText from "../inputText";
 import "./Setting.scss";
 import avatar from "../avatar.png";
 import { useAuth } from '../../contexts/AuthContext';
+import { firestore } from '../../firebase';
 
 const Settings = () => {
 
-  let [firstName, setFirstName] = useState("First Name");
-  let [lastName, setLastName] = useState("Last Name");
-  let [email, setEmail] = useState("Email");
-  let [password, setPassword] = useState("Password");
+  let [firstName, setFirstName] = useState("");
+  let [lastName, setLastName] = useState("");
+  let [email, setEmail] = useState("");
+  let [password, setPassword] = useState("");
   let [fileUrl, setFileUrl] = useState(avatar);
-  const { currentUser, currentUserDetails } = useAuth();
+  const { currentUser, currentUserDetails, updateUser } = useAuth();
 
   function processImage(event){
     const imageFile = event.target.files[0];
@@ -20,7 +21,7 @@ const Settings = () => {
     setFileUrl(imageUrl)
   }
 
-  function onSubmit(e) {
+  async function onSubmit(e) {
     e.preventDefault();
     const postingInfo = {
       profile: {
@@ -32,7 +33,13 @@ const Settings = () => {
       },
       // uid: 
     };
-    console.log(postingInfo)
+    console.log({...currentUserDetails, ...currentUser, email : email }, "Updated");
+    try {
+      await updateUser({currentUser, email : email })
+      alert("Successfully updated");
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   function onClick(e) {
@@ -41,7 +48,9 @@ const Settings = () => {
     setPassword(currentUser.password);
     setFirstName(currentUserDetails.firstName);
     setLastName(currentUserDetails.lastName);
+    console.log(currentUserDetails)
   }
+
 
   return (
     <div>
@@ -67,18 +76,20 @@ const Settings = () => {
                   <InputText
                     className="row-item"
                     label="EMAIL"
-                    placeholder={currentUser.email}
+                    placeholder="Email"
                     type="email"
                     onChange={(e) => setEmail(e.target.value)}
+                    value={email}
                   />
                 </div>
                 <div className="row-container">
                   <InputText
                     className="row-item"
                     label="PASSWORD"
-                    placeholder={currentUser.password}
+                    placeholder="Password"
                     type="password"
                     onChange={(e) => setPassword(e.target.value)}
+                    value={password}
                   />
                 </div>
               </div>
@@ -87,24 +98,26 @@ const Settings = () => {
                   <InputText
                     className="row-item"
                     label="FIRST NAME"
-                    placeholder={currentUserDetails.firstName}
+                    placeholder="First Name"
                     type="text"
                     onChange={(e) => setFirstName(e.target.value)}
+                    value={firstName}
                   />
                 </div>
                 <div className="row-container">
                   <InputText
                     className="row-item"
                     label="LAST NAME"
-                    placeholder={currentUserDetails.lastName}
+                    placeholder="Last Name"
                     type="text"
                     onChange={(e) => setLastName(e.target.value)}
+                    value={lastName}
                   />
                 </div>
               </div>
               <div className="buttons">
                 <div className="button-container">
-                  <button className="button" variant="contained">SAVE</button>
+                  <button type="submit" className="button" variant="contained">SAVE</button>
                 </div>
                 <div className="sub-message">
                   <button onClick={(e)=>onClick(e)} className="bold button-hover">RESET</button>
