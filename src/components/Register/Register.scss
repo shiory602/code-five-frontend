@@ -2,14 +2,16 @@
 @import "../../scss-config/color.scss";
 
 .register-main {
-  width: 100vw;
+  // width: 100vw;
   // height: 100vh;
   display: flex;
   background: $color_light;
   
   .leftBox {
-    width: 50%;
-    margin: 40px 68px 100px;
+    // width: 50%;
+    width: calc(50% - 68px);
+    // margin: 40px 68px 100px;
+    margin: 40px 0 100px 68px;
 		@include mobile {
 			width: 100%;
       margin: 10px auto;

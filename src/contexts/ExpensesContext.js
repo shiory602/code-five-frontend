@@ -74,6 +74,7 @@ export const ExpensesProvider = ({ children }) => {
           // console.log(doc.id, " => ", doc.data());
           const { category, description, amount } = doc.data();
           expenses.push({
+            id: doc.id,
             category,
             description,
             amount

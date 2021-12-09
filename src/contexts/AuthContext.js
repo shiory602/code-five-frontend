@@ -25,7 +25,7 @@ export const AuthProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState();
   const [currentUserDetails, setCurrentUserDetails] = useState(curUserDetails);
 
-  const createUser = async (email, password, firstName, lastName) => {
+  const createUser = async (email, password, firstName, lastName, admin) => {
     try {
       const user = await createUserWithEmailAndPassword(auth, email, password);
 
@@ -34,7 +34,8 @@ export const AuthProvider = ({ children }) => {
       const userDoc = doc(firestore, `users/${user.user.uid}`);
       const docData =  {
         firstName,
-        lastName
+        lastName,
+        admin
       };
 
       // save data to the database
@@ -71,21 +72,25 @@ export const AuthProvider = ({ children }) => {
         const docSnap = await getDoc(docRef);
         let firstName = '';
         let lastName = '';
+        let admin = false;
 
         if (docSnap.exists()) {
           firstName = await docSnap.data().firstName;
           lastName = await docSnap.data().lastName;
+          admin = await docSnap.data().admin;
         }
 
         curUserDetails = {
           firstName,
-          lastName
+          lastName,
+          admin
         };
       }
       else {
         curUserDetails = {
           firstName: '',
-          lastName: ''
+          lastName: '',
+          admin: false
         };
       }
       
