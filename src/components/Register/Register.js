@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
+import { FormControlLabel, Checkbox } from '@mui/material';
 import InputText from "../inputText";
 
 import "./Register.scss";
@@ -14,6 +15,7 @@ const Register = () => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [password, setPassword] = useState('');
+  const [admin, setAdmin] = useState(false);
   const [error, setError] = useState('');
 
   const { createUser } = useAuth();
@@ -25,7 +27,7 @@ const Register = () => {
 
     try {
       await setError('');
-      const msgError = await createUser(email, password, firstName, lastName);
+      const msgError = await createUser(email, password, firstName, lastName, admin);
 
       if (msgError === '') redirect.push('/');
       else setError(msgError);
@@ -78,6 +80,15 @@ const Register = () => {
                 type="password"
                 onChange={e => setPassword(e.target.value)}
                 value={password}
+              />
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    onChange={e => setAdmin(e.target.value)}
+                    value={admin}
+                  />
+                }
+                label="admin user"
               />
               <div className="buttonContainer">
                 <button className="button" variant="contained" type="submit">Register</button>

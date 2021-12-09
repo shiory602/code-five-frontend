@@ -37,7 +37,7 @@ const Navbar = () => {
 
       <ul className={clicked ? 'nav-menu active' : 'nav-menu'}>
         {MenuItems.map((item, index) => {
-          return (
+          if (!item.adminLink || (item.adminLink && currentUserDetails.admin)) return (
             <li key={index}>
               <a className={item.cName} href={item.url}>
                 <div id="icon">{item.icon}</div>
