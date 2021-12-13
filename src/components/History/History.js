@@ -17,72 +17,72 @@ const History = () => {
                         <li>
                             <span className="name">Lunch</span>
                             <span className="value">$ 60</span>
-                            <span><i class="fas fa-trash-alt"></i></span>
+                            <span><i className="fas fa-trash-alt"></i></span>
                         </li>
                         <li>
                             <span className="name">Taxi</span>
                             <span className="value">$ 40</span>
-                            <span><i class="fas fa-trash-alt"></i></span>
+                            <span><i className="fas fa-trash-alt"></i></span>
                         </li>
                         <li>
                             <span className="name">Gas</span>
                             <span className="value">$ 80</span>
-                            <span><i class="fas fa-trash-alt"></i></span>
+                            <span><i className="fas fa-trash-alt"></i></span>
                         </li>
                         <li>
                             <span className="name">Lunch</span>
                             <span className="value">$ 60</span>
-                            <span><i class="fas fa-trash-alt"></i></span>
+                            <span><i className="fas fa-trash-alt"></i></span>
                         </li>
                         <li>
                             <span className="name">Taxi</span>
                             <span className="value">$ 100</span>
-                            <span><i class="fas fa-trash-alt"></i></span>
+                            <span><i className="fas fa-trash-alt"></i></span>
                         </li>
                         <li>
                             <span className="name">Lunch</span>
                             <span className="value">$ 60</span>
-                            <span><i class="fas fa-trash-alt"></i></span>
+                            <span><i className="fas fa-trash-alt"></i></span>
                         </li>
                         <li>
                             <span className="name">Taxi</span>
                             <span className="value">$ 40</span>
-                            <span><i class="fas fa-trash-alt"></i></span>
+                            <span><i className="fas fa-trash-alt"></i></span>
                         </li>
                         <li>
                             <span className="name">Gas</span>
                             <span className="value">$ 80</span>
-                            <span><i class="fas fa-trash-alt"></i></span>
+                            <span><i className="fas fa-trash-alt"></i></span>
                         </li>
                         <li>
                             <span className="name">Lunch</span>
                             <span className="value">$ 60</span>
-                            <span><i class="fas fa-trash-alt"></i></span>
+                            <span><i className="fas fa-trash-alt"></i></span>
                         </li>
                         <li>
                             <span className="name">Taxi</span>
                             <span className="value">$ 100</span>
-                            <span><i class="fas fa-trash-alt"></i></span>
+                            <span><i className="fas fa-trash-alt"></i></span>
                         </li>
                         <li>
                             <span className="name">Taxi</span>
                             <span className="value">$ 40</span>
-                            <span><i class="fas fa-trash-alt"></i></span>
+                            <span><i className="fas fa-trash-alt"></i></span>
                         </li>
                         <li>
                             <span className="name">Gas</span>
                             <span className="value">$ 80</span>
-                            <span><i class="fas fa-trash-alt"></i></span>
+                            <span><i className="fas fa-trash-alt"></i></span>
                         </li>
                         <li>
                             <span className="name">Lunch</span>
                             <span className="value">$ 60</span>
-                            <span><i class="fas fa-trash-alt"></i></span>
+                            <span><i className="fas fa-trash-alt"></i></span>
                         </li>
                         <li>
                             <span className="name">Taxi</span>
                             <span className="value">$ 100</span>
-                            <span><i class="fas fa-trash-alt"></i></span>
+                            <span><i className="fas fa-trash-alt"></i></span>
                         </li>
                     </ul>
 
