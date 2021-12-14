@@ -11,13 +11,12 @@ const History = () => {
     console.log(listExpenses)
 
     return (
-      <div>
+    <div>
         <Navbar />
         <div className="history-container">
             <div className="history-box">
                 <div className="history-page">
                     <h3>Expenses History</h3>
-
                     <ul>
                         {listExpenses.length > 0 ? listExpenses.map((expense, index) => {
                             return (
@@ -31,15 +30,13 @@ const History = () => {
                             )
                         }) : ''}
                     </ul>
-
                     <div className="history-btn">
                     <Link to="/"><button className="button">DASHBOARD</button></Link>
-                    </div>
-
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     )}  
 
 export default History;
