@@ -1,99 +1,42 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import Navbar from '../Navbar/Navbar';
-import "./History.css";
+import "./History.scss";
 import "../../scss-config/material-ui.scss";
-import {Link } from "react-router-dom";
+import { useExpenses } from '../../contexts/ExpensesContext';
 
 const History = () => {
+
+    const { listExpenses } = useExpenses();
+    console.log(listExpenses)
+
     return (
-      <div>
+    <div>
         <Navbar />
         <div className="history-container">
             <div className="history-box">
                 <div className="history-page">
                     <h3>Expenses History</h3>
-
                     <ul>
-                        <li>
-                            <span className="name">Lunch</span>
-                            <span className="value">$ 60</span>
-                            <span><i class="fas fa-trash-alt"></i></span>
-                        </li>
-                        <li>
-                            <span className="name">Taxi</span>
-                            <span className="value">$ 40</span>
-                            <span><i class="fas fa-trash-alt"></i></span>
-                        </li>
-                        <li>
-                            <span className="name">Gas</span>
-                            <span className="value">$ 80</span>
-                            <span><i class="fas fa-trash-alt"></i></span>
-                        </li>
-                        <li>
-                            <span className="name">Lunch</span>
-                            <span className="value">$ 60</span>
-                            <span><i class="fas fa-trash-alt"></i></span>
-                        </li>
-                        <li>
-                            <span className="name">Taxi</span>
-                            <span className="value">$ 100</span>
-                            <span><i class="fas fa-trash-alt"></i></span>
-                        </li>
-                        <li>
-                            <span className="name">Lunch</span>
-                            <span className="value">$ 60</span>
-                            <span><i class="fas fa-trash-alt"></i></span>
-                        </li>
-                        <li>
-                            <span className="name">Taxi</span>
-                            <span className="value">$ 40</span>
-                            <span><i class="fas fa-trash-alt"></i></span>
-                        </li>
-                        <li>
-                            <span className="name">Gas</span>
-                            <span className="value">$ 80</span>
-                            <span><i class="fas fa-trash-alt"></i></span>
-                        </li>
-                        <li>
-                            <span className="name">Lunch</span>
-                            <span className="value">$ 60</span>
-                            <span><i class="fas fa-trash-alt"></i></span>
-                        </li>
-                        <li>
-                            <span className="name">Taxi</span>
-                            <span className="value">$ 100</span>
-                            <span><i class="fas fa-trash-alt"></i></span>
-                        </li>
-                        <li>
-                            <span className="name">Taxi</span>
-                            <span className="value">$ 40</span>
-                            <span><i class="fas fa-trash-alt"></i></span>
-                        </li>
-                        <li>
-                            <span className="name">Gas</span>
-                            <span className="value">$ 80</span>
-                            <span><i class="fas fa-trash-alt"></i></span>
-                        </li>
-                        <li>
-                            <span className="name">Lunch</span>
-                            <span className="value">$ 60</span>
-                            <span><i class="fas fa-trash-alt"></i></span>
-                        </li>
-                        <li>
-                            <span className="name">Taxi</span>
-                            <span className="value">$ 100</span>
-                            <span><i class="fas fa-trash-alt"></i></span>
-                        </li>
+                        {listExpenses.length > 0 ? listExpenses.map((expense, index) => {
+                            return (
+                                <li key={index}>
+                                    <span className='name'>{expense.category}</span>
+                                    <span className='name'>{expense.description}</span>
+                                    <span className='value'>$
+                                        {expense.amount}</span>
+                                    <span><i className="fas fa-trash-alt"></i></span>
+                                </li>
+                            )
+                        }) : ''}
                     </ul>
-
                     <div className="history-btn">
                     <Link to="/"><button className="button">DASHBOARD</button></Link>
-                    </div>
-
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     )}  
 
 export default History;

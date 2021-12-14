@@ -67,7 +67,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 2rem;
+  padding: 1rem;
 }
 
 .approval-avatar .avatar {
@@ -116,6 +116,111 @@ body {
       justify-content: space-around;
 }
 
+.Modal {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  left: 300px;
+  margin: 10%;
+  min-width: 50%;
+  background-color: #EBEBEB;
+  border-radius: 10px;
+  padding: 2rem;
+  -webkit-box-shadow: 0 35px 45px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 35px 45px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
+}
+
+.Modal .modal-close {
+  padding: 1rem;
+  width: 100%;
+}
+
+.Modal .modal-content {
+  width: 100%;
+}
+
+.Modal .modal-content h2 {
+  width: 100%;
+}
+
+.Modal .modal-content ul {
+  background: rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  -webkit-box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.2);
+          box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  margin: 20px;
+  overflow: hidden;
+}
+
+.Modal .modal-content ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 5px 10px;
+  margin: 5px 0;
+  -webkit-transition: .5s;
+  transition: .5s;
+  border-radius: 5px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.Modal .modal-content ul li span {
+  margin-right: 1rem;
+}
+
+.Modal .modal-content ul li:nth-child(1) {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.Modal .modal-content ul li:nth-child(2) {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.Modal .modal-content ul li:nth-child(3) {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.Modal .modal-content ul li:nth-child(4) {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.Modal .modal-content ul li span:nth-child(1) {
+  width: 15%;
+}
+
+.Modal .modal-content ul li span:nth-child(2) {
+  width: 25%;
+  text-align: right;
+}
+
+.Modal .modal-content ul li:hover {
+  -webkit-transform: scale(1.03);
+          transform: scale(1.03);
+  background: #B2B3CD;
+}
+
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(49, 49, 49, 0.6);
+}
+
 @media screen and (max-width: 970px) {
   .approval-container {
     margin-left: 0;
@@ -126,6 +231,12 @@ body {
   }
   .approval-avatar {
     padding: 0;
+  }
+  .Modal {
+    top: 80px;
+    left: 0;
+    margin: 5%;
+    min-width: 90%;
   }
 }
 
