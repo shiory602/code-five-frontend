@@ -29,7 +29,6 @@ const Navbar = () => {
   return (
     <nav className="NavbarItems">
       <h1 className="navbar-logo"><img src={logo} alt="Logo" className="logo" /></h1>
-    
 
       <div className="menu-icon" onClick={handleClick}>
         <i className={clicked ? 'fas fa-times': 'fas fa-bars'}></i>
@@ -37,17 +36,18 @@ const Navbar = () => {
 
       <ul className={clicked ? 'nav-menu active' : 'nav-menu'}>
         {MenuItems.map((item, index) => {
-          if (!item.adminLink || (item.adminLink && currentUserDetails.admin)) return (
-            <li key={index}>
-              <a className={item.cName} href={item.url}>
-                <div id="icon">{item.icon}</div>
-                <div id="title">{item.title}</div> 
-              </a>
-            </li>
-          )
+          if (!item.adminLink || (item.adminLink && currentUserDetails.admin))
+            return (
+              <li key={index}>
+                <a className={item.cName} href={item.url}>
+                  <div id="icon">{item.icon}</div>
+                  <div id="title">{item.title}</div> 
+                </a>
+              </li>
+            );
         })}
         <div className="navbar-avatar">
-          <img src={avatar} alt="Avatar" className="avatar"/>
+          <img src={currentUser.photoURL || avatar} alt="Avatar" className="avatar"/>
           <h3>
             {currentUser.email}<br />
             {currentUserDetails.firstName} {currentUserDetails.lastName}<br />

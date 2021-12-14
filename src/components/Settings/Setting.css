@@ -4,7 +4,6 @@ body {
 }
 
 .setting_main {
-  height: 100vh;
   padding: 2rem;
 }
 
@@ -28,8 +27,7 @@ body {
 @media screen and (min-width: 1025px) {
   .setting_main .box {
     padding: 1rem;
-    margin: 0rem 1rem 2rem 20rem;
-    height: 88vh;
+    margin: 0rem 1rem 0rem 20rem;
   }
 }
 
@@ -56,9 +54,11 @@ body {
 }
 
 .setting_main .box .setting_container .setting_image_icon {
-  width: 90px;
-  height: 90px;
-  margin: 20px;
+  width: 4rem;
+  height: 4rem;
+  margin: 0.5rem 1rem;
+  border: 2px solid #3a005c;
+  border-radius: 50%;
 }
 
 .setting_main .box .setting_container .row {
@@ -84,8 +84,8 @@ body {
 }
 
 .setting_main .box .setting_container .row .row-container {
-  margin: 10px 30px;
-  width: 45%;
+  margin: 0.5rem 1rem;
+  width: calc(50% - 2rem);
 }
 
 @media screen and (max-width: 768px) {
@@ -108,10 +108,13 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 10px auto;
+  margin: 0.5rem auto;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .setting_main .box .setting_container .buttons .button-container {

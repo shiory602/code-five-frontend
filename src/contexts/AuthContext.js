@@ -4,10 +4,14 @@ import { auth, firestore } from '../firebase';
 import {
   onAuthStateChanged,
   createUserWithEmailAndPassword,
+  updateEmail,
+  updatePassword,
+  updateProfile,
   signInWithEmailAndPassword,
   signOut
 } from 'firebase/auth';
 import { doc, getDoc, setDoc } from 'firebase/firestore';
+import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 
 let curUserDetails = {
   firstName: '',
@@ -22,6 +26,7 @@ export const useAuth = () => {
 
 export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
+  const [updatedUser, setUpdatedUser] = useState(false);
   const [currentUser, setCurrentUser] = useState();
   const [currentUserDetails, setCurrentUserDetails] = useState(curUserDetails);
 
@@ -44,6 +49,61 @@ export const AuthProvider = ({ children }) => {
       return '';
     } catch (err) {
       return 'Failed to create an account. Please try again.';
+    };
+  };
+
+  const updateUser = async (email, password, profileImage, firstName, lastName, admin) => {
+    try {
+      setUpdatedUser(false);
+      await updateEmail(auth.currentUser, email);
+      await updatePassword(auth.currentUser, password);
+
+      if (profileImage !== '') {
+        const storage = getStorage();
+        const profileImageRef = ref(storage, `users/${auth.currentUser.uid}/${profileImage.name}`);
+
+        await uploadBytes(profileImageRef, profileImage);
+
+        if (profileImageRef.name !== '') {
+          const imgURL = await getDownloadURL(profileImageRef);
+
+          await updateProfile(auth.currentUser, {
+            photoURL: imgURL
+          });
+        }
+      }
+
+      const userDoc = doc(firestore, `users/${auth.currentUser.uid}`);
+      const docData =  {
+        firstName,
+        lastName,
+        admin
+      };
+
+      // save data to the database
+      await setDoc(userDoc, docData, {merge: true});
+
+      setUpdatedUser(true);
+      return 'User updated!';
+    } catch (err) {
+      let msg = '';
+
+      console.error(err);
+
+      switch(err.code) {
+        case 'auth/requires-recent-login':
+          msg = 'Failed to update the user. Please log in again.';
+          break;
+
+        case 'auth/weak-password':
+          msg = 'Password should be at least 6 characters.';
+          break;
+
+          default:
+          msg = 'Failed to update the user. Please try again.';
+      }
+
+      return msg;
     };
   };
 
@@ -96,12 +156,13 @@ export const AuthProvider = ({ children }) => {
       
       await setCurrentUserDetails(curUserDetails);
     })();
-  }, [currentUser]);
+  }, [currentUser, updatedUser]);
 
   const value = {
     currentUser,
     currentUserDetails,
     createUser,
+    updateUser,
     loginUser,
     logoutUser
   };
