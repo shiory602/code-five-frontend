@@ -116,11 +116,6 @@ export const AuthProvider = ({ children }) => {
     return signOut(auth);
   };
 
-  const updateUser = (user) => {
-    console.log(user, auth);
-    return updateCurrentUser(auth, user);
-  };
-
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, user => {
       setCurrentUser(user);
@@ -170,8 +165,7 @@ export const AuthProvider = ({ children }) => {
     createUser,
     updateUser,
     loginUser,
-    logoutUser,
-    updateUser
+    logoutUser
   };
 
   return (

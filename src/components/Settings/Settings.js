@@ -1,13 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from "react-router-dom";
 import Navbar from '../Navbar/Navbar';
 import { Alert, FormControlLabel, Checkbox } from '@mui/material';
 import InputText from "../inputText";
 
 import "./Setting.scss";
-import avatar from "../avatar.png";
-import { useAuth } from '../../contexts/AuthContext';
-import { firestore } from '../../firebase';
 
 import avatar from "../avatar.png";
 
@@ -54,16 +50,6 @@ const Settings = () => {
 
     setLoading(false);
   };
-
-  function onClick(e) {
-    e.preventDefault(e);
-    setEmail(currentUser.email);
-    setPassword(currentUser.password);
-    setFirstName(currentUserDetails.firstName);
-    setLastName(currentUserDetails.lastName);
-    console.log(currentUserDetails)
-  }
-
 
   return (
     !loading ? (<div>
@@ -148,9 +134,6 @@ const Settings = () => {
               <div className="buttons">
                 <div className="button-container">
                   <button type="submit" className="button" variant="contained">SAVE</button>
-                </div>
-                <div className="sub-message">
-                  <button onClick={(e)=>onClick(e)} className="bold button-hover">RESET</button>
                 </div>
               </div>
             </form>
