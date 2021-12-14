@@ -9,6 +9,7 @@ import db from "../../firebase";
 import { collection, onSnapshot } from '@firebase/firestore';
 
 import Modal from 'react-modal';
+import { useExpenses } from '../../contexts/ExpensesContext';
 
 Modal.setAppElement('#root');
 
@@ -23,41 +24,22 @@ const Approval = () => {
     console.log(users)
 
     const [modalIsOpen, setModalIsOpen] = useState(false);
+
+    const { listExpenses } = useExpenses();
+    
+
+    /* const [approved, setApproved] = useState(false); */
+
+    function approveHandler() {
+        var btn = document.getElementById("btn");
+        var bgColor = "#7400B8";
+        console.log(btn);
+        
+    }
     
     return (
         <div>
-            <Modal 
-                isOpen={modalIsOpen}
-                onRequestClose={() => setModalIsOpen(false)}
-                className="Modal"
-                overlayClassName="Overlay"
-            >
-                <div className="modal-content">
-                    <h2>Expenses History</h2>
-                    <ul>
-                                <li>
-                                    <span className='name'>Hotel </span>
-                                    <span className='value'>$ 100</span>
-                                </li>
-                                <li>
-                                    <span className='name'>Hotel </span>
-                                    <span className='value'>$ 100</span>
-                                </li>
-                                <li>
-                                    <span className='name'>Hotel </span>
-                                    <span className='value'>$ 100</span>
-                                </li>
-                                <li>
-                                    <span className='name'>Hotel </span>
-                                    <span className='value'>$ 100</span>
-                                </li>
-                    </ul>
-                </div>  
-                <div className="modal-close">
-                    <button className="button" onClick={() => setModalIsOpen(false)}>CLOSE</button>
-                </div>  
-            </Modal>
-
+            
             <Navbar />
             <div className="approval-container">
                 <div className="approval-box">
@@ -80,7 +62,7 @@ const Approval = () => {
                                                             <Link to="/approval"><button className="button" onClick={() => {setModalIsOpen(true);}}>DETAILS</button></Link>
                                                         </p>    
                                                         <p>
-                                                            <button className="button">APPROVE</button>
+                                                            <button id="btn" className="button" onClick={approveHandler}>APPROVE</button>
                                                         </p>
                                                     </div>   
                                                 </div>
@@ -96,7 +78,29 @@ const Approval = () => {
                 </div>
             </div>
 
-            
+            <Modal 
+                isOpen={modalIsOpen}
+                onRequestClose={() => setModalIsOpen(false)}
+                className="Modal"
+                overlayClassName="Overlay"
+            >
+                <div className="modal-content">
+                    <h2>Expenses History</h2>
+                    <ul>
+                        {listExpenses.length > 0 ? listExpenses.map((expense, index) => {
+                            return (
+                                <li key={index}>
+                                    <span className='name'>{expense.description}</span>
+                                    <span className='value'>$ {expense.amount}</span>
+                                </li>
+                            )
+                        }) : ''}
+                    </ul>
+                </div>  
+                <div className="modal-close">
+                    <button className="button" onClick={() => setModalIsOpen(false)}>CLOSE</button>
+                </div>  
+            </Modal>
         </div>
     )}  
 

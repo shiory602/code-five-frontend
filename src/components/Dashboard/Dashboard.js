@@ -75,15 +75,3 @@ const Dashboard = () => {
 
 export default Dashboard;
 
-
-/* Transport Tickets (Airplane, Train, Bus...)
-Baggage fees
-Rental cars
-Fuel
-Public transportation costs
-Uber and ridesharing services
-Hotel rooms and accommodations
-Business meals, food and beverages
-Convention expenses
-Road tolls
-Parking fees */
