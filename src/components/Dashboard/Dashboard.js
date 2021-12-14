@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import Navbar from '../Navbar/Navbar';
 import Expenses from '../Expenses/Expenses';
+import money from "../money.png";
 
 import { useExpenses } from '../../contexts/ExpensesContext';
 
@@ -60,8 +61,8 @@ const Dashboard = () => {
           </div>          
           <div className="dashboard-box4">
             <form className="transaction">
-              <h3>Expense Categories</h3>
-              
+              <h3>The best way to manage your expenses!!</h3>
+              <img src={money} alt="Money" className="money-img" />
             </form>
           </div> 
           <div className="dashboard-box5">
