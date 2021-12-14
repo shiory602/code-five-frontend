@@ -64,9 +64,13 @@ body {
         }
 
         li span:nth-child(2) {
-            width: 70rem;
-            margin-right: 5rem;
-            text-align: right;
+            width: 60rem;
+            margin-left: 5rem;
+        }
+
+        li span:nth-child(3) {
+            width: 20rem;
+            margin-left: 5rem;
         }
 
         li:hover {
