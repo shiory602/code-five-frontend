@@ -1,102 +1,76 @@
-import React, { useState } from 'react';
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
 import Navbar from '../Navbar/Navbar';
+import { Alert, FormControlLabel, Checkbox } from '@mui/material';
 import InputText from "../inputText";
+
 import "./Setting.scss";
+
+import avatar from "../avatar.png";
+
+import { useAuth } from '../../contexts/AuthContext';
 
 const Settings = () => {
 
-  let [userName, setUserName] = useState("");
-  let [firstName, setFirstName] = useState("");
-  let [lastName, setLastName] = useState("");
-  let [email, setEmail] = useState("");
-  let [password, setPassword] = useState("");
-  let [fileUrl, setFileUrl] = useState(null);
+  const { currentUser, currentUserDetails, updateUser } = useAuth();
 
-  function processImage(event){
-    const imageFile = event.target.files[0];
-    const imageUrl = URL.createObjectURL(imageFile);
-    setFileUrl(imageUrl)
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [email, setEmail] = useState(currentUser.email);
+  const [password, setPassword] = useState('');
+  const [admin, setAdmin] = useState(false);
+  const [profileImage, setProfileImage] = useState('');
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setFirstName(currentUserDetails.firstName);
+    setLastName(currentUserDetails.lastName);
+    setAdmin(currentUserDetails.admin);
+  }, [currentUserDetails]);
+
+  function processImage(e) {
+    const imageFile = e.target.files[0];
+
+    setProfileImage(imageFile)
   }
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
-    const postingInfo = {
-      profile: {
-        userName,
-        firstName,
-        lastName,
-        email,
-        password, 
-        fileUrl 
-      },
-      // uid: 
-    };
-    console.log(postingInfo)
+
+    setLoading(true);
+    setError('');
+
+    try {
+      const msgError = await updateUser(email, password, profileImage, firstName, lastName, admin);
+
+      setError(msgError);
+    } catch (err) {
+      setError('Failed to update the user. Please try again.');
+    }
+
+    setLoading(false);
   };
 
   return (
-    <div>
+    !loading ? (<div>
       <Navbar />
-      
+
       <div className="setting_main">
         <div className="box">
           <div className="setting_container">
-            <h2>Account Setting</h2>
-            <div className="setting_image">
-              <img
-                src={fileUrl}
-                id="preview"
-                className="setting_image_icon" 
-                alt="icon"
-              />
-              <input type="file" onChange={processImage} accept="image/*" />
-            </div>
+            <h2>Account Settings</h2>
+
+            {error !== '' ? <Alert sx={{ m: '1rem' }} severity={error === 'User updated!' ? 'success' : 'error'}>{error}</Alert> : ''}
 
             <form onSubmit={(e) => onSubmit(e)}>
-              <div className="row">
-                <div className="row-container">
-                  <InputText
-                    className="row-item"
-                    label="USERNAME"
-                    placeholder="Username"
-                    type="text"
-                    onChange={(e) => setUserName(e.target.value)}
-                    value={userName}
-                  />
-                </div>
-                <div className="row-container">
-                  <InputText
-                    className="row-item"
-                    label="PASSWORD"
-                    placeholder="Password"
-                    type="password"
-                    onChange={(e) => setPassword(e.target.value)}
-                    value={password}
-                  />
-                </div>
-              </div>
-              <div className="row">
-                <div className="row-container">
-                  <InputText
-                    className="row-item"
-                    label="FIRST NAME"
-                    placeholder="First name"
-                    type="text"
-                    onChange={(e) => setFirstName(e.target.value)}
-                    value={firstName}
-                  />
-                </div>
-                <div className="row-container">
-                  <InputText
-                    className="row-item"
-                    label="LAST NAME"
-                    placeholder="Last name"
-                    type="text"
-                    onChange={(e) => setLastName(e.target.value)}
-                    value={lastName}
-                  />
-                </div>
+              <div className="setting_image">
+                <img
+                  src={currentUser.photoURL || avatar}
+                  id="preview"
+                  className="setting_image_icon" 
+                  alt="icon"
+                />
+                <input type="file" onChange={processImage} accept="image/*" />
               </div>
               <div className="row">
                 <div className="row-container">
@@ -110,19 +84,63 @@ const Settings = () => {
                   />
                 </div>
               </div>
+              <div className="row">
+                <div className="row-container">
+                  <InputText
+                    className="row-item"
+                    label="FIRST NAME"
+                    placeholder="First Name"
+                    type="text"
+                    onChange={(e) => setFirstName(e.target.value)}
+                    value={firstName}
+                  />
+                </div>
+                <div className="row-container">
+                  <InputText
+                    className="row-item"
+                    label="LAST NAME"
+                    placeholder="Last Name"
+                    type="text"
+                    onChange={(e) => setLastName(e.target.value)}
+                    value={lastName}
+                  />
+                </div>
+              </div>
+              <div className="row">
+                <div className="row-container">
+                  <InputText
+                    className="row-item"
+                    label="PASSWORD"
+                    placeholder="Password"
+                    type="password"
+                    onChange={(e) => setPassword(e.target.value)}
+                    value={password}
+                  />
+                </div>
+              </div>
+              <div className="row">
+                <div className="row-container">
+                  <FormControlLabel
+                    control={
+                      <Checkbox
+                        onChange={e => setAdmin(!admin)}
+                        checked={admin}
+                      />
+                    }
+                    label="admin user"
+                  />
+                </div>
+              </div>
               <div className="buttons">
                 <div className="button-container">
-                  <button className="button" variant="contained">SAVE</button>
-                </div>
-                <div className="sub-message">
-                  <Link className="bold button-hover" to="/">CANCEL</Link>
+                  <button type="submit" className="button" variant="contained">SAVE</button>
                 </div>
               </div>
             </form>
           </div>
         </div>
       </div>
-    </div>
+    </div>) : ''
   )
 }  
 export default Settings;

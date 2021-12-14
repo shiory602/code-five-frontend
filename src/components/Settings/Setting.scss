@@ -5,7 +5,7 @@ body {
 }
 
 .setting_main {
-  height: 100vh;
+  // height: 100vh;
   padding: 2rem;
   
   .box {
@@ -21,8 +21,9 @@ body {
     }
     @include pc {
       padding: 1rem;
-      margin: 0rem 1rem 2rem 20rem;
-      height: 88vh;
+      // margin: 0rem 1rem 2rem 20rem;
+      margin: 0rem 1rem 0rem 20rem;
+      // height: 88vh;
     }
 
     .setting_container {
@@ -39,10 +40,15 @@ body {
         align-items: center;
 
         &_icon {
-          width: 90px;
-          height: 90px;
-          margin: 20px;
+          // width: 90px;
+          width: 4rem;
+          // height: 90px;
+          height: 4rem;
+          // margin: 20px;
+          margin: 0.5rem 1rem;
           // background: #C4C4C4;
+          border: 2px solid #3a005c;
+          border-radius: 50%;
         }
       }
       
@@ -55,8 +61,9 @@ body {
         }
 
         .row-container {
-          margin: 10px 30px;
-          width: 45%;
+          // margin: 10px 30px;
+          margin: 0.5rem 1rem;
+          width: calc(50% - 2rem);
           @include mobile {
             width: 15rem;
           }
@@ -70,8 +77,10 @@ body {
 
       .buttons {
         display: flex;
-        margin: 10px auto;
+        // margin: 10px auto;
+        margin: 0.5rem auto;
         justify-content: space-evenly;
+        align-items: center;
 
         .button-container {
           width: 30%;
