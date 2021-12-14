@@ -8,7 +8,8 @@ import {
   updatePassword,
   updateProfile,
   signInWithEmailAndPassword,
-  signOut
+  signOut,
+  updateCurrentUser
 } from 'firebase/auth';
 import { doc, getDoc, setDoc } from 'firebase/firestore';
 import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
@@ -115,6 +116,11 @@ export const AuthProvider = ({ children }) => {
     return signOut(auth);
   };
 
+  const updateUser = (user) => {
+    console.log(user, auth);
+    return updateCurrentUser(auth, user);
+  };
+
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, user => {
       setCurrentUser(user);
@@ -164,7 +170,8 @@ export const AuthProvider = ({ children }) => {
     createUser,
     updateUser,
     loginUser,
-    logoutUser
+    logoutUser,
+    updateUser
   };
 
   return (

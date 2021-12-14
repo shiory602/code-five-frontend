@@ -5,6 +5,9 @@ import { Alert, FormControlLabel, Checkbox } from '@mui/material';
 import InputText from "../inputText";
 
 import "./Setting.scss";
+import avatar from "../avatar.png";
+import { useAuth } from '../../contexts/AuthContext';
+import { firestore } from '../../firebase';
 
 import avatar from "../avatar.png";
 
@@ -52,6 +55,16 @@ const Settings = () => {
     setLoading(false);
   };
 
+  function onClick(e) {
+    e.preventDefault(e);
+    setEmail(currentUser.email);
+    setPassword(currentUser.password);
+    setFirstName(currentUserDetails.firstName);
+    setLastName(currentUserDetails.lastName);
+    console.log(currentUserDetails)
+  }
+
+
   return (
     !loading ? (<div>
       <Navbar />
@@ -90,7 +103,7 @@ const Settings = () => {
                   <InputText
                     className="row-item"
                     label="FIRST NAME"
-                    placeholder="First name"
+                    placeholder="First Name"
                     type="text"
                     onChange={(e) => setFirstName(e.target.value)}
                     value={firstName}
@@ -100,7 +113,7 @@ const Settings = () => {
                   <InputText
                     className="row-item"
                     label="LAST NAME"
-                    placeholder="Last name"
+                    placeholder="Last Name"
                     type="text"
                     onChange={(e) => setLastName(e.target.value)}
                     value={lastName}
@@ -134,10 +147,10 @@ const Settings = () => {
               </div>
               <div className="buttons">
                 <div className="button-container">
-                  <button className="button" variant="contained">SAVE</button>
+                  <button type="submit" className="button" variant="contained">SAVE</button>
                 </div>
                 <div className="sub-message">
-                  <Link className="bold button-hover" to="/">CANCEL</Link>
+                  <button onClick={(e)=>onClick(e)} className="bold button-hover">RESET</button>
                 </div>
               </div>
             </form>
