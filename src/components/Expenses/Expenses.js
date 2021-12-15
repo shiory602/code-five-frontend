@@ -3,7 +3,6 @@ import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import InputText from "../inputText";
 
-import { useAuth } from '../../contexts/AuthContext';
 import { useExpenses } from '../../contexts/ExpensesContext';
 
 import './Expenses.css'
@@ -14,19 +13,18 @@ const Expenses = () => {
   const [amount, setAmount] = useState('');
   const [error, setError] = useState('');
 
-  const { currentUser } = useAuth();
   const { createExpense, listCategories } = useExpenses();
 
   const onSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      await setError('');
-      const msgError = await createExpense(category, description, amount, currentUser.uid);
+      setError('');
+      const msgError = await createExpense(category, description, amount);
 
       if (msgError !== '') setError(msgError);
     } catch (err) {
-      await setError('Failed to create an expense. Please try again.');
+      setError('Failed to create an expense. Please try again.');
     }
   };
 

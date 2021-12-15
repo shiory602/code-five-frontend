@@ -89,6 +89,7 @@ body {
 }
 
 .approval-itens {
+  padding: 0 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -97,13 +98,18 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .approval-itens p {
   margin: 1rem 1rem;
   width: 180px;
+}
+
+.approval-itens a {
+  cursor: pointer;
 }
 
 .approval-itens .approval-options {

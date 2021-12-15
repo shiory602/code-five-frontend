@@ -8,8 +8,7 @@ import {
   updatePassword,
   updateProfile,
   signInWithEmailAndPassword,
-  signOut,
-  updateCurrentUser
+  signOut
 } from 'firebase/auth';
 import { doc, getDoc, setDoc } from 'firebase/firestore';
 import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
