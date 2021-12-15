@@ -8,10 +8,10 @@ import avatar from "../avatar.png";
 import db from "../../firebase";
 import { collection, onSnapshot } from '@firebase/firestore';
 
-/* import Modal from 'react-modal';
+import Modal from 'react-modal';
 import { useExpenses } from '../../contexts/ExpensesContext';
 
-Modal.setAppElement('#root'); */
+Modal.setAppElement('#root');
 
 const Approval = () => {
 
@@ -23,7 +23,7 @@ const Approval = () => {
         ), []);
     console.log(users)
 
-    /* const [modalIsOpen, setModalIsOpen] = useState(false);
+    const [modalIsOpen, setModalIsOpen] = useState(false);
 
     const { listExpenses } = useExpenses();
     
@@ -34,7 +34,7 @@ const Approval = () => {
         var bgColor = "#7400B8";
         console.log(btn);
         
-    } */
+    }
     
     return (
         <div>
@@ -58,10 +58,10 @@ const Approval = () => {
                                                     </p>
                                                     <div className="approval-options">
                                                         <p>
-                                                            <Link to="/approval"><button className="button" /* onClick={() => {setModalIsOpen(true);}} */>DETAILS</button></Link>
+                                                            <Link to="/approval"><button className="button" onClick={() => {setModalIsOpen(true);}}>DETAILS</button></Link>
                                                         </p>    
                                                         <p>
-                                                            <button id="btn" className="button" /* onClick={approveHandler} */>APPROVE</button>
+                                                            <button id="btn" className="button" onClick={approveHandler}>APPROVE</button>
                                                         </p>
                                                     </div>   
                                                 </div>
@@ -77,7 +77,7 @@ const Approval = () => {
                 </div>
             </div>
 
-            {/* <Modal 
+            <Modal 
                 isOpen={modalIsOpen}
                 onRequestClose={() => setModalIsOpen(false)}
                 className="Modal"
@@ -99,7 +99,7 @@ const Approval = () => {
                 <div className="modal-close">
                     <button className="button" onClick={() => setModalIsOpen(false)}>CLOSE</button>
                 </div>  
-            </Modal> */}
+            </Modal>
         </div>
     )}  
 

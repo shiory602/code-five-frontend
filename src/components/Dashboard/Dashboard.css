@@ -236,7 +236,8 @@ body {
 }
 
 .dashboard-box4 .money-img {
-  width: 90%;
+  margin: 1rem;
+  width: 70%;
   -webkit-box-flex: 0;
       -ms-flex: 0 1 auto;
           flex: 0 1 auto;
