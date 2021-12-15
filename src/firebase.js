@@ -18,4 +18,3 @@ initializeApp(firebaseConfig);
 export const auth = getAuth();
 export const curUser = auth.currentUser;
 export const firestore = getFirestore();
-export default getFirestore();
