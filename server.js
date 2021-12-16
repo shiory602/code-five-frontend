@@ -7,9 +7,25 @@ app.use('/', express.static (
             './build'
     )
 ))
+app.use('/history', express.static (
+    resolve (
+            __dirname,
+            './build'
+    )
+))
+app.use('/approval', express.static (
+    resolve (
+            __dirname,
+            './build'
+    )
+))
+app.use('/settings', express.static (
+    resolve (
+            __dirname,
+            './build'
+    )
+))
 
-var distDir = __dirname + "/dist/";
-app.use(express.static(distDir));
 
 app.listen(process.env.PORT || 3000, (err) => {
     if (err) {
