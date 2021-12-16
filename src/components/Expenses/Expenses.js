@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import FormControl from '@mui/material/FormControl'; 
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import InputText from "../inputText";
@@ -34,19 +35,21 @@ const Expenses = () => {
       <form className="transaction" onSubmit={onSubmit}>
         <h3>New Transaction</h3>
         <h4>Category:</h4>
-        <Select
-          displayEmpty
-          required
-          onChange={e => setCategory(e.target.value)}
-          value={category}
-        >
-          <MenuItem value="">-- Select --</MenuItem>
-          {listCategories.length > 0 ? listCategories.map((expense) => {
-            return (
-              <MenuItem key={expense.id} value={expense.id}>{expense.description}</MenuItem>
-            )
-          }) : ''}
-        </Select>
+        <FormControl variant="filled" sx={{ width: '100%', m: '16px 0 8px' }}>
+          <Select
+            displayEmpty
+            required
+            onChange={e => setCategory(e.target.value)}
+            value={category}
+          >
+            <MenuItem value="">-- Select --</MenuItem>
+            {listCategories.length > 0 ? listCategories.map((expense) => {
+              return (
+                <MenuItem key={expense.id} value={expense.id}>{expense.description}</MenuItem>
+              )
+            }) : ''}
+          </Select>
+        </FormControl>
         <h4>Description:</h4>
         <InputText
           placeholder="Description..."

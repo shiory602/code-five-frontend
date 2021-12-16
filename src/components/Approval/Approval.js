@@ -14,8 +14,6 @@ const Approval = () => {
 
   const handleApproveExpense = async (id) => {
     try {
-      console.log('ID:', id);
-
       await approveExpense(id);
     } catch (err) {
       console.error(err.message);
@@ -35,10 +33,10 @@ const Approval = () => {
               {listExpensesToApproval.map(expense => (
                 <li key={expense.id}>
                   <div className="approval-itens">
-                    <span>{expense.userEmail} &ndash; {expense.userName}</span>
+                    <span>{expense.userName}</span>
                     <span>{expense.category}</span>
                     <span>{expense.description}</span>
-                    <span>{expense.amount}</span>
+                    <span>$ {expense.amount}</span>
                     <a onClick={() => handleApproveExpense(expense.id)}><span><i className="fas fa-check-circle"></i></span></a>
                   </div>
                 </li>

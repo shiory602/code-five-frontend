@@ -40,7 +40,7 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-right: 1px solid rgba(255, 255, 255, 0.2);
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 1rem;
+  padding: 15px;
 }
 
 .total h3 {
@@ -88,7 +88,7 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-right: 1px solid rgba(255, 255, 255, 0.2);
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 0.5rem;
+  padding: 15px;
 }
 
 .history {
@@ -100,7 +100,13 @@ body {
 }
 
 .history h3 {
+  margin-bottom: 20px;
   font-size: 40px;
+  text-align: center;
+}
+
+.history h4 {
+  font-size: 20px;
   text-align: center;
 }
 
@@ -110,7 +116,7 @@ body {
   -webkit-box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.2);
           box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
-  margin: 20px;
+  margin: 20px 0;
   overflow: hidden;
 }
 
@@ -190,17 +196,7 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-right: 1px solid rgba(255, 255, 255, 0.2);
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 1rem;
-}
-
-.transaction h3 {
-  font-size: 35px;
-  margin-bottom: 20px;
-}
-
-.transaction h4 {
-  font-size: 20px;
-  margin: 2rem 0;
+  padding: 15px;
 }
 
 .dashboard-box4 {
@@ -252,8 +248,8 @@ body {
   grid-area: box5;
 }
 
-.dashboard-add-btn, .dashboard-history-btn {
-  padding: 0 5%;
+.dashboard-add-btn {
+  margin-top: 5px;
 }
 
 @media screen and (max-width: 970px) {

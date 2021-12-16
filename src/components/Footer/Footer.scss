@@ -25,10 +25,11 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    gap: 0 20px;
     list-style: none;
     margin-bottom: 2rem;
     li {
-        margin-right: 30px;
+        // margin-right: 30px;
         cursor: pointer;
     }
     li:hover {

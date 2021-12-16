@@ -38,22 +38,28 @@ const Dashboard = () => {
             <div className="history">
               <h3>History</h3>
 
-              <ul>
-                {listExpenses.length > 0 ? listExpenses.map((expense, idx) => {
-                  return (
-                    <li key={idx}>
-                      <span className="category">{expense.category}</span>
-                      <span className="name">{expense.description}</span>
-                      <span className="value">$ {expense.amount}</span>
-                    </li>
+              {listExpenses.length > 0
+                ? (
+                    <>
+                      <ul>
+                        {listExpenses.map((expense, idx) => {
+                          return (
+                            <li key={idx}>
+                              <span className="category">{expense.category}</span>
+                              <span className="name">{expense.description}</span>
+                              <span className="value">$ {expense.amount}</span>
+                            </li>
+                          )
+                        })}
+                      </ul>
+
+                      <div className="dashboard-history-btn">
+                        <Link to="/history"><button className="button">SEE MORE</button></Link>
+                      </div>
+                    </>
                   )
-                }) : ''}
-              </ul>
-
-              <div className="dashboard-history-btn">
-              <Link to="/history"><button className="button">SEE MORE</button></Link>
-              </div>
-
+                : <h4>You do not have any transaction</h4>
+              }
             </div>
           </div>
           <div className="dashboard-box3">
@@ -75,4 +81,3 @@ const Dashboard = () => {
 }
 
 export default Dashboard;
-
