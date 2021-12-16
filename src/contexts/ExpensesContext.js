@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
 import { firestore } from '../firebase';
-import { collection, doc, setDoc, addDoc, getDocs, query, where, orderBy, serverTimestamp } from 'firebase/firestore';
+import { collection, doc, setDoc, addDoc, deleteDoc, getDocs, query, where, orderBy, serverTimestamp } from 'firebase/firestore';
 
 import { useAuth } from './AuthContext';
 
@@ -36,6 +36,17 @@ export const ExpensesProvider = ({ children }) => {
       setLoading(true);
     } catch (err) {
       return 'Failed to create an expense. Please try again.';
+    };
+  };
+
+  const deleteExpense = async (id) => {
+    try {
+      await deleteDoc(doc(firestore, `expenses/${id}`));
+
+      setLoading(true);
+    } catch (err) {
+      console.error(err.message);
+      return 'Failed to delete an expense. Please try again.';
     };
   };
 
@@ -88,12 +99,13 @@ export const ExpensesProvider = ({ children }) => {
 
         querySnapshot.forEach((doc) => {
           // console.log(doc.id, " => ", doc.data());
-          const { category, description, amount } = doc.data();
+          const { category, description, amount, approved } = doc.data();
           expenses.push({
             id: doc.id,
             category,
             description,
-            amount
+            amount,
+            approved
           });
         });
 
@@ -139,6 +151,7 @@ export const ExpensesProvider = ({ children }) => {
 
   const value = {
     createExpense,
+    deleteExpense,
     approveExpense,
     listCategories,
     listExpenses,
